@@ -1,5 +1,5 @@
 import React from 'react';
-import './var.css'
+import '../var.css'
 
 import { Header } from '../lib/button/dropdown';
 

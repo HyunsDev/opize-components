@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import Logo from './assets/opize.png';
+import Logo from '../assets/opize.png';
 
 const Center = styled.div`
     color: var(--grey5);

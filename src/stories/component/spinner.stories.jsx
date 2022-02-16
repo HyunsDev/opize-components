@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Spinner } from '../lib/spinner';
+import { Spinner } from '../../lib/component/spinner';
 
 export default {
-  title: 'block/Spinner',
+  title: 'component/Spinner',
   component: Spinner,
   argTypes: {
     size: { control: 'number' },

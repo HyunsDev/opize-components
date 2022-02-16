@@ -1,10 +1,10 @@
 import React from 'react';
-import './var.css'
+import '../var.css'
 
-import { Card } from '../lib/card';
+import { Card } from '../../lib/component/card';
 
 export default {
-  title: 'block/Card',
+  title: 'component/Card',
   component: Card,
   argTypes: {
     cardNumber: { control: 'text' },

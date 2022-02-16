@@ -1,7 +1,7 @@
 import React from 'react';
-import './var.css'
+import '../var.css'
 
-import { Btn } from '../lib/button/btns';
+import { Btn } from '../../lib/button/btns';
 
 export default {
   title: 'button/Btn',
