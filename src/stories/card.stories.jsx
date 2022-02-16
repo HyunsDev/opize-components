@@ -1,14 +1,16 @@
 import React from 'react';
+import './var.css'
 
 import { Card } from '../lib/card';
 
 export default {
-  title: 'Opize/Card',
+  title: 'block/Card',
   component: Card,
   argTypes: {
     cardNumber: { control: 'text' },
     cardCompany: { control: 'text' },
     cardInfo: { control: 'text' },
+    backgroundColor: { control: 'color' },
   },
 };
 

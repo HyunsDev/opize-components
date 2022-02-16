@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Logo from './assets/opize.png';
-import './assets/var.css'
 
 const Center = styled.div`
     color: var(--grey5);
@@ -15,7 +14,7 @@ const Center = styled.div`
 const Div = styled.div`
     width: 350px;
     height: 180px;
-    background: linear-gradient(45deg, var(--grey9), var(--grey8));
+    background: ${props => props.backgroundColor || 'var(--grey9)'};
     border-radius: 8px;
     box-sizing: border-box;
     position: relative;
@@ -61,7 +60,7 @@ export function Card(props) {
     const cardNumber = props.cardNumber && `${props.cardNumber.substring(0,4)} ${props?.cardNumber.substring(4,8)} ${props?.cardNumber.substring(8,12)} ${props?.cardNumber.substring(12,16)}`
 
     return (
-        <Div onClick={props.onClick || null}>
+        <Div onClick={props.onClick || null} backgroundColor={props.backgroundColor}>
             <Img src={Logo} alt='opize Logo' />
             <CardNum>{props.cardCompany} {cardNumber || t('user_payment_card_add')}</CardNum>
             <CardInfo>{props.cardInfo}</CardInfo>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Spinner } from '../lib/spinner';
 
 export default {
-  title: 'Opize/Spinner',
+  title: 'block/Spinner',
   component: Spinner,
   argTypes: {
     size: { control: 'number' },
@@ -19,4 +19,5 @@ Primary.args = {
   primary: true,
   size: 32,
   strokeWidth: 4,
+  color: 'var(--grey9)'
 };
