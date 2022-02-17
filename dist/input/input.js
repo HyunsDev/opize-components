@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React from 'react';
 export const Input = styled.input`
     border-radius: 8px;
     border: solid 2px ${props => props.isError ? "var(--red7)" : "var(--grey2)"};

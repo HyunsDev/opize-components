@@ -49,7 +49,7 @@ const BtnSubmitInput = styled.input`
 `
 
 const BtnDivver = styled.div`
-    padding-left: 12px;
+    
 `
 
 export function Btn(props) {

@@ -47,7 +47,7 @@ const BtnSubmitInput = styled.input`
     font-weight: 800;
 `;
 const BtnDivver = styled.div`
-    padding-left: 12px;
+    
 `;
 export function Btn(props) {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BtnDivver, null, /*#__PURE__*/React.createElement(BtnSubmitDiv, {
