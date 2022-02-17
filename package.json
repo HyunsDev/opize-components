@@ -6,7 +6,6 @@
   "description": "Opize를 위한 컴포넌트 패키지",
   "homepage": "https://github.com/HyunsDev/opize-conponents",
   "author": "HyunsDev <hyuns@hyuns.dev> (https://hyuns.dev)",
-  "main": "dist/index.js",
   "bugs": {
     "url": "https://github.com/HyunsDev/opize-conponents/issues",
     "email": "hello@opize.me"
