@@ -106,7 +106,7 @@ const A = styled.a`
 const LinkA = styled(Link)`
     color: var(--teal5);
 `;
-export function Codeblock(props) {
+export function CodeBlock(props) {
   const [isFold, setFold] = useState(true);
   return /*#__PURE__*/React.createElement(ProjectDiv, null, /*#__PURE__*/React.createElement(ProjectInfo, {
     onClick: () => setFold(!isFold)
@@ -126,7 +126,7 @@ export function Codeblock(props) {
     to: e.to || "/"
   }, e.text)))));
 }
-Codeblock.defaultProps = {
+CodeBlock.defaultProps = {
   icon: '',
   title: '',
   subtitle: '',

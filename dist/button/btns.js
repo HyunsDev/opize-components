@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import styled from "styled-components";
 import { Spinner } from '../component/spinner';
 const BtnSubmitDiv = styled.div`
@@ -75,3 +77,10 @@ Btn.defaultProps = {
   onClick: () => {},
   isLoading: false
 };
+export function ColorBtn(props) {
+  return /*#__PURE__*/React.createElement(Btn, _extends({}, props, {
+    color: "var(--teal0)",
+    backgroundColor: "var(--teal5)",
+    backgroundColorHover: "var(--teal6)"
+  }));
+}

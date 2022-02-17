@@ -13,7 +13,7 @@ const BannerImg = styled.img`
     height: 90px;
     border-radius: 8px;
 `;
-export const Banner = props => {
+export function Banner(props) {
   return /*#__PURE__*/React.createElement(Divver, null, /*#__PURE__*/React.createElement(Swiper, {
     slidesPerView: 1,
     spaceBetween: 8,
@@ -48,7 +48,7 @@ export const Banner = props => {
       })));
     }
   })));
-};
+}
 Banner.defaultProps = {
   banners: [{
     to: 'https://opize.me',
