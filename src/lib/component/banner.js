@@ -17,7 +17,7 @@ const BannerImg = styled.img`
     border-radius: 8px;
 `
 
-export const Banner = (props) => {
+export function Banner(props) {
     return (
         <Divver>
             <Swiper

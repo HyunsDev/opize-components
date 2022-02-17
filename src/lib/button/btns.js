@@ -75,3 +75,9 @@ Btn.defaultProps = {
     onClick: (() => {}),
     isLoading: false,
 }
+
+export function ColorBtn (props) {
+    return (
+        <Btn {...props} color='var(--teal0)' backgroundColor='var(--teal5)' backgroundColorHover='var(--teal6)' />
+    )
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { MiniCodeBlock } from '../../lib/block/miniCodeblock';
+import { MiniCodeBlock } from '../../lib/block';
 
 export default {
   title: 'block/MiniCodeBlock',

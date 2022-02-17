@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Search } from '../../lib/input/search';
+import { Search } from '../../lib/input';
 
 export default {
   title: 'input/search',

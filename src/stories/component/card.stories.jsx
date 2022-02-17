@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Card } from '../../lib/component/card';
+import { Card } from '../../lib/component';
 
 export default {
   title: 'component/Card',

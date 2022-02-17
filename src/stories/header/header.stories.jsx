@@ -1,7 +1,7 @@
 import React from 'react';
 import './var.css'
 
-import { Header } from '../lib/header/header';
+import { Header } from '../../lib/header';
 
 export default {
   title: 'header/Header',

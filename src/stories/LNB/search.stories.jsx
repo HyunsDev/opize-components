@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { HorizonLNB } from '../../lib/LNB/horizonLNB';
+import { HorizonLNB } from '../../lib/LNB';
 
 export default {
   title: 'LNB/horizonLNB',

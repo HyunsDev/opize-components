@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { MiniClickableBlock } from '../../lib/block/miniClickableBlock';
+import { MiniClickableBlock } from '../../lib/block';
 
 export default {
   title: 'block/MiniClickableBlock',

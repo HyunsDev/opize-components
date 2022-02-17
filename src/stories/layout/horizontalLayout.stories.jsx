@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { HorizontalLayout } from '../../lib/layout/horizontalLayout';
+import { HorizontalLayout } from '../../lib/layout';
 import { Input } from '../../lib/input/input';
 
 export default {

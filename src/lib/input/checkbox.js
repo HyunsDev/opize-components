@@ -54,8 +54,6 @@ const Label = styled.div`
     }
 `
 
-
-
 export function Checkbox(props) {
     // const [isCheck, setCheck] = useState(props.value)
 

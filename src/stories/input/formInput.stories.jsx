@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { FormInput } from '../../lib/input/formInput';
+import { FormInput } from '../../lib/input';
 
 export default {
   title: 'input/FormInput',

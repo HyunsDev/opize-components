@@ -116,7 +116,7 @@ const LinkA = styled(Link)`
     color: var(--teal5);
 `
 
-export function Codeblock(props) {
+export function CodeBlock(props) {
     const [ isFold, setFold ] = useState(true)
 
     return (
@@ -144,7 +144,7 @@ export function Codeblock(props) {
     )
 }
 
-Codeblock.defaultProps = {
+CodeBlock.defaultProps = {
     icon: '',
     title: '',
     subtitle: '',

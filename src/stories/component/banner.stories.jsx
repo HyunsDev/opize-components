@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Banner } from '../../lib/component/banner';
+import { Banner } from '../../lib/component';
 
 export default {
   title: 'component/Banner',

@@ -1,17 +1,17 @@
 import React from 'react';
 import '../var.css'
 
-import { Codeblock } from '../../lib/block/codeblock';
+import { CodeBlock } from '../../lib/block';
 
 export default {
   title: 'block/Codeblock',
-  component: Codeblock,
+  component: CodeBlock,
   argTypes: {
     
   },
 };
 
-const Template = (args) => <Codeblock {...args} />;
+const Template = (args) => <CodeBlock {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
