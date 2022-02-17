@@ -120,39 +120,39 @@ const CloseBackground = styled.div`
 `
 
 export function Dropdown(props) {
-    const [ isOpen, setOpen ] = useState(false)
+    const [isOpen, setOpen] = useState(false)
 
     return (
         <>
-            <SelectorDivver isOpen={isOpen} onClick={() => {setOpen(!isOpen)}}>
+            <SelectorDivver isOpen={isOpen} onClick={() => { setOpen(!isOpen) }}>
                 <NowPage isOpen={isOpen}>
                     <img src={props.img} alt="로고" />
                     <div>{props.label}</div>
                 </NowPage>
                 <Selector isOpen={isOpen} direction={props.direction}>
                     {
-                        props.menus && props.menus.map((e,i) => {
+                        props.menus && props.menus.map((e, i) => {
                             if (e.hide) return null
                             if (e.to.includes("http")) {
                                 return (
                                     <SelectorItemA href={e.to} key={i}>
                                         {e.img && <img src={e.img} alt="" />}
                                         <div>{e.label || "label"}</div>
-                                    </SelectorItemA>   
+                                    </SelectorItemA>
                                 )
                             } else {
                                 return (
                                     <SelectorItem to={e.to} key={i}>
                                         {e.img && <img src={e.img} alt="" />}
                                         <div>{e.label || "label"}</div>
-                                    </SelectorItem>   
+                                    </SelectorItem>
                                 )
                             }
                         })
                     }
                 </Selector>
             </SelectorDivver>
-            { isOpen && <CloseBackground onClick={() => setOpen(false)} />}
+            {isOpen && <CloseBackground onClick={() => setOpen(false)} />}
         </>
     )
 }

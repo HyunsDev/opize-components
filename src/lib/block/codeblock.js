@@ -21,7 +21,7 @@ const Info = styled.div`
     flex-direction: column;
 `
 
-const InfoDesc =styled.div`
+const InfoDesc = styled.div`
     color: var(--grey6);
     font-size: 14px;
 `
@@ -117,7 +117,7 @@ const LinkA = styled(Link)`
 `
 
 export function CodeBlock(props) {
-    const [ isFold, setFold ] = useState(true)
+    const [isFold, setFold] = useState(true)
 
     return (
         <ProjectDiv>

@@ -29,7 +29,7 @@ export function HorizontalLayout(props) {
                 {props.label}
             </Left>
             <Right>
-                { props.children }
+                {props.children}
             </Right>
         </Div>
     )

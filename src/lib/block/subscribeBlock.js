@@ -19,7 +19,7 @@ const Info = styled.div`
     flex-direction: column;
 `
 
-const InfoDesc =styled.div`
+const InfoDesc = styled.div`
     color: var(--grey6);
     font-size: 14px;
 `

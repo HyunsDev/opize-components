@@ -38,7 +38,7 @@ const Title = styled.span`
 `
 
 const Btn = styled.span`
-    color: ${props =>props.color || 'var(--teal5)'};
+    color: ${props => props.color || 'var(--teal5)'};
     font-size: 14px;
     text-decoration: underline;
     cursor: pointer;
@@ -61,7 +61,7 @@ export function MiniBtnsBlock(props) {
                 </div>
                 <div>
                     {
-                        props.btns.map((e,i) => <Btn key={i} color={e.color} onClick={e.onClick}>{e.label}</Btn>)
+                        props.btns.map((e, i) => <Btn key={i} color={e.color} onClick={e.onClick}>{e.label}</Btn>)
                     }
                 </div>
             </Info>

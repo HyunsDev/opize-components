@@ -27,7 +27,7 @@ const SpinnerDiv = styled.div`
     background-color: inherit;
     border-radius: 8px;
     transition: margin-right 400ms;
-    margin-right: ${props => props.show ? 0 : -props.size*1.6}px;
+    margin-right: ${props => props.show ? 0 : -props.size * 1.6}px;
  
     div {
         visibility: ${props => props.show ? "visible" : "hidden"}
@@ -51,7 +51,7 @@ const BtnDivver = styled.div`
     padding-left: 12px;
 `
 
-export function Btn (props) {
+export function Btn(props) {
     return (
         <>
             <BtnDivver>
@@ -72,11 +72,11 @@ Btn.defaultProps = {
     color: "var(--grey9)",
     type: 'button',
     label: 'label',
-    onClick: (() => {}),
+    onClick: (() => { }),
     isLoading: false,
 }
 
-export function ColorBtn (props) {
+export function ColorBtn(props) {
     return (
         <Btn {...props} color='var(--teal0)' backgroundColor='var(--teal5)' backgroundColorHover='var(--teal6)' />
     )

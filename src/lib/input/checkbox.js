@@ -41,7 +41,7 @@ const FakeCheckBox = styled.div`
     }
 
     ${Icon} {
-        visibility: ${props=>props.checked? 'visible': 'hidden'};
+        visibility: ${props => props.checked ? 'visible' : 'hidden'};
     }
 `
 
@@ -72,6 +72,6 @@ export function Checkbox(props) {
 
 Checkbox.defaultProps = {
     value: true,
-    onChange: () => {},
+    onChange: () => { },
     label: ''
 }

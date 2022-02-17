@@ -57,7 +57,7 @@ const Img = styled.img`
 
 export function Card(props) {
     const { t } = useTranslation('translation');
-    const cardNumber = props.cardNumber && `${props.cardNumber.substring(0,4)} ${props?.cardNumber.substring(4,8)} ${props?.cardNumber.substring(8,12)} ${props?.cardNumber.substring(12,16)}`
+    const cardNumber = props.cardNumber && `${props.cardNumber.substring(0, 4)} ${props?.cardNumber.substring(4, 8)} ${props?.cardNumber.substring(8, 12)} ${props?.cardNumber.substring(12, 16)}`
 
     return (
         <Div onClick={props.onClick || null} backgroundColor={props.backgroundColor}>

@@ -35,13 +35,13 @@ export function Search(props) {
     return (
         <SearchDiv>
             <MagnifyingGlass size={16} weight='bold' color='var(--grey7)' />
-            <Input type={'search'} value={props.value} onChange={props.onChange} placeholder={props.placeholder || t("search_placeholder")}/>
+            <Input type={'search'} value={props.value} onChange={props.onChange} placeholder={props.placeholder || t("search_placeholder")} />
         </SearchDiv>
     )
 }
 
 Search.defaultProps = {
     value: '',
-    onChange: () => {},
+    onChange: () => { },
     placeholder: ''
 }

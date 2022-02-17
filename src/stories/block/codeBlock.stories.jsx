@@ -7,7 +7,7 @@ export default {
   title: 'block/Codeblock',
   component: CodeBlock,
   argTypes: {
-    
+
   },
 };
 
@@ -20,7 +20,7 @@ Primary.args = {
   title: 'title',
   subtitle: 'subtitle',
   desc: 'desc',
-  children: JSON.stringify({a: '123'}, null, 4),
+  children: JSON.stringify({ a: '123' }, null, 4),
   links: [{
     to: '/',
     text: '테스트 링크'

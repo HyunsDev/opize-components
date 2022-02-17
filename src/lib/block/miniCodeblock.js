@@ -98,8 +98,8 @@ const LinkA = styled(Link)`
     color: var(--teal5);
 `
 
-export function MiniCodeBlock (props) {
-    const [ isFold, setFold ] = useState(true)
+export function MiniCodeBlock(props) {
+    const [isFold, setFold] = useState(true)
 
     return (
         <Div>

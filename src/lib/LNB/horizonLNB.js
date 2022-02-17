@@ -39,7 +39,7 @@ const UnderLine = styled.div`
 export function HorizonLNB(props) {
     const DivRef = useRef()
     const targets = useRef({})
-    const [ select, setSelect ] = useState('')
+    const [select, setSelect] = useState('')
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export function HorizonLNB(props) {
                 }
             }
             return null
-            
+
         }).filter(Boolean)
         setSelect(res[res.length - 1])
     }, [props.selected, props.menu, props.exact])
@@ -76,7 +76,7 @@ export function HorizonLNB(props) {
                     )
                 })
             }
-            <UnderLine width={width} left={targets.current[select]?.getBoundingClientRect().left - DivRef.current?.getBoundingClientRect().left}/>
+            <UnderLine width={width} left={targets.current[select]?.getBoundingClientRect().left - DivRef.current?.getBoundingClientRect().left} />
         </Div>
     )
 }
@@ -85,12 +85,12 @@ HorizonLNB.defaultProps = {
     menu: [
         {
             id: 'example1',
-            onClick: () => {},
+            onClick: () => { },
             label: 'example1'
         },
         {
             id: 'example2',
-            onClick: () => {},
+            onClick: () => { },
             label: 'example2'
         },
     ],

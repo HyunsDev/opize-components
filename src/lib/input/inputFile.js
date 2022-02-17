@@ -73,6 +73,6 @@ export function InputFile(props) {
 }
 
 InputFile.defaultProps = {
-    setUploadFile: () => {},
+    setUploadFile: () => { },
     uploadFile: {},
 }

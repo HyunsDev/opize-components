@@ -32,24 +32,24 @@ export function Banner(props) {
             >
                 {
                     props.banners.map((e, i) => {
-                            if (e.to.includes('http')) {
-                                return (
-                                    <SwiperSlide key={i}>
-                                        <a href={e.to || "/"} target={'_blank'} rel="noreferrer">
-                                            <BannerImg src={e.bannerUrl} alt=""/>
-                                        </a>
-                                    </SwiperSlide>
-                                )
-                            } else {
-                                return (
-                                    <SwiperSlide key={i}>
-                                        <Link to={e.to || "/"}>
-                                            <BannerImg src={e.bannerUrl} alt=""/>
-                                        </Link>
-                                    </SwiperSlide>
-                                )
-                            }
+                        if (e.to.includes('http')) {
+                            return (
+                                <SwiperSlide key={i}>
+                                    <a href={e.to || "/"} target={'_blank'} rel="noreferrer">
+                                        <BannerImg src={e.bannerUrl} alt="" />
+                                    </a>
+                                </SwiperSlide>
+                            )
+                        } else {
+                            return (
+                                <SwiperSlide key={i}>
+                                    <Link to={e.to || "/"}>
+                                        <BannerImg src={e.bannerUrl} alt="" />
+                                    </Link>
+                                </SwiperSlide>
+                            )
                         }
+                    }
                     )
                 }
             </Swiper>

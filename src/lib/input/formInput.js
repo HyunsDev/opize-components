@@ -33,12 +33,12 @@ const Input = styled.input`
 
 const Message = styled.div`
     height: 20px;
-    color: ${props => props.error ? "var(--red9)" :"#2D6560"};
+    color: ${props => props.error ? "var(--red9)" : "#2D6560"};
     font-size: 14px;
     margin-top: 4px;
 `
 
-export function FormInput (props) {
+export function FormInput(props) {
     return (
         <LoginDiv>
             <Label>{props.label}</Label>
@@ -53,5 +53,5 @@ FormInput.defaultProps = {
     placeholder: '',
     autoComplete: 'on',
     type: 'text',
-    onChange: () => {},
+    onChange: () => { },
 }

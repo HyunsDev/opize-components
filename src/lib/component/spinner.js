@@ -57,7 +57,7 @@ export const Spinner = (props) => {
     return (
         <Loader size={props.size}>
             <Circular viewBox="25 25 50 50" color={props.color}>
-                <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth={props.strokeWidth || "4"} strokeMiterlimit="10"/>
+                <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth={props.strokeWidth || "4"} strokeMiterlimit="10" />
             </Circular>
         </Loader>
     )

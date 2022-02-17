@@ -29,9 +29,8 @@ export function VerticalLayout(props) {
                 {props.label}
             </Title>
             <Children>
-                { props.children }
+                {props.children}
             </Children>
-            
         </Div>
     )
 }

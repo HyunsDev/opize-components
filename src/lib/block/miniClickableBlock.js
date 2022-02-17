@@ -73,5 +73,5 @@ export function MiniClickableBlock(props) {
 }
 
 MiniClickableBlock.defaultProps = {
-    onClick: () => {}
+    onClick: () => { }
 }
