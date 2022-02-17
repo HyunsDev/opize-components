@@ -95,6 +95,6 @@ HorizonLNB.defaultProps = {
             label: 'example2'
         },
     ],
-    exact: true,
+    exact: false,
     selected: 'example1'
 }

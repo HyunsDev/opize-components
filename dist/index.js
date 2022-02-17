@@ -6,3 +6,4 @@ export * from './input';
 export * from './layout';
 export * from './LNB';
 export * from './page';
+export * from './title';

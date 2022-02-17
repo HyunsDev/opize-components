@@ -17,7 +17,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   title: 'title',
-  subTitle: 'subTitle',
+  subtitle: 'subTitle',
   info: 'info',
   children: JSON.stringify({a: '123'}, null, 4),
   links: [{

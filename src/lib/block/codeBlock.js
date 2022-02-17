@@ -126,7 +126,7 @@ export function CodeBlock(props) {
                     <img src={props.icon} alt={props.title} />
                 </IconDiv>
                 <Info>
-                    <Name>{props.title}<span>{props.code}</span></Name>
+                    <Name>{props.title}<span>{props.subtitle}</span></Name>
                     <InfoDesc>{props.desc}</InfoDesc>
                 </Info>
             </ProjectInfo>
