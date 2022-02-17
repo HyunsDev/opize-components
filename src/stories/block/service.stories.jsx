@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Service } from '../../lib/block';
+import { Service } from '../../lib';
 
 export default {
   title: 'block/Service',

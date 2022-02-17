@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { MagnifyingGlass } from 'phosphor-react';
 import { useTranslation } from 'react-i18next';
+import React from 'react';
 const SearchDiv = styled.div`
     background-color: var(--grey1);
     width: 100%;

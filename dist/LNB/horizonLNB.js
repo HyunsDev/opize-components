@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
+import React from 'react';
 const Div = styled.div`
     border-bottom: solid 1px var(--grey1);
     align-items: center;

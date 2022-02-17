@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { CodeBlock } from '../../lib/block';
+import { CodeBlock } from '../../lib';
 
 export default {
   title: 'block/Codeblock',

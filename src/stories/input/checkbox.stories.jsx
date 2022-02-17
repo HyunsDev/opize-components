@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Checkbox } from '../../lib/input';
+import { Checkbox } from '../../lib';
 
 export default {
   title: 'input/Checkbox',

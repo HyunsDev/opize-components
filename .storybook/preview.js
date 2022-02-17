@@ -1,5 +1,3 @@
-import { addDecorator } from "@storybook/react";
-import StoryRouter from 'storybook-react-router';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export const parameters = {

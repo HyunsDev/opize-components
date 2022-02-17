@@ -1,8 +1,8 @@
 import React from 'react';
 import '../var.css'
 
-import { HorizontalLayout } from '../../lib/layout';
-import { Input } from '../../lib/input/input';
+import { HorizontalLayout } from '../../lib';
+import { Input } from '../../lib/input';
 
 export default {
   title: 'layout/HorizontalLayout',

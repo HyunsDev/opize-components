@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import React from 'react';
 import Opize from '../assets/opize.png';
 const SelectorDivver = styled.div`
     z-index: ${props => props.isOpen ? 999 : 0};

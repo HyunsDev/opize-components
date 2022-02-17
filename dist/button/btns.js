@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled from "styled-components";
 import { Spinner } from '../component/spinner';
+import React from 'react';
 const BtnSubmitDiv = styled.div`
     position: relative;
     display: flex;

@@ -2,7 +2,7 @@ import React from 'react';
 import '../var.css'
 import { Pause, Receipt } from 'phosphor-react';
 
-import { SubscribeBlock } from '../../lib/block';
+import { SubscribeBlock } from '../../lib';
 
 export default {
   title: 'block/SubscribeBlock',

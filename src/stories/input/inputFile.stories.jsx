@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { InputFile } from '../../lib/input';
+import { InputFile } from '../../lib';
 
 export default {
   title: 'input/InputFile',

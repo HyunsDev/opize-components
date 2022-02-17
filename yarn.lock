@@ -10213,6 +10213,120 @@ open@^8.0.9, open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
+opize-components@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/opize-components/-/opize-components-0.1.5.tgz#1a309464cf45d11aa9dae17517b2d794efb5b6b5"
+  integrity sha512-1xsZOQ+LK1G7dMJsI+oxC6MvMacg9kDKiAUUHjcSaKTf4S9j8LptaMh2BCxHuaUqDUuCcqoDPAJYcDUFw+zCiA==
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.2"
+    "@testing-library/react" "^12.1.2"
+    "@testing-library/user-event" "^13.5.0"
+    axios "^0.26.0"
+    dayjs "^1.10.7"
+    phosphor-react "^1.4.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-i18next "^11.15.4"
+    react-router-dom "^6.2.1"
+    react-scripts "5.0.0"
+    react-syntax-highlighter "^15.4.5"
+    storybook-react-router "^1.0.8"
+    styled-components "^5.3.3"
+    swiper "^8.0.6"
+    web-vitals "^2.1.4"
+
+opize-components@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/opize-components/-/opize-components-0.1.6.tgz#217d37335b548a38908c7772e7a80f604714d80a"
+  integrity sha512-1/MdmNTXQ0HyPEXrOa1qKf8CqyDvy+xqJDrLP/TDvV7OmgjmYQGVmfgrVGHZc15TpfWGzYDlinrEQIcfmYnDsw==
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.2"
+    "@testing-library/react" "^12.1.2"
+    "@testing-library/user-event" "^13.5.0"
+    axios "^0.26.0"
+    dayjs "^1.10.7"
+    opize-components "^0.1.5"
+    phosphor-react "^1.4.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-i18next "^11.15.4"
+    react-router-dom "^6.2.1"
+    react-scripts "5.0.0"
+    react-syntax-highlighter "^15.4.5"
+    storybook-react-router "^1.0.8"
+    styled-components "^5.3.3"
+    swiper "^8.0.6"
+    web-vitals "^2.1.4"
+
+opize-components@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/opize-components/-/opize-components-0.1.7.tgz#5fe07b87464bb3c62497a42ef14e9c4d23a80917"
+  integrity sha512-moAtfZfgnP7foAZK7paZy8BC3N38Gq/BN0TbiB2zqNE/Ld8ehXF6rm/YZR7MUqkAysUWooZ0StmXPHwjFZwN7Q==
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.2"
+    "@testing-library/react" "^12.1.2"
+    "@testing-library/user-event" "^13.5.0"
+    axios "^0.26.0"
+    dayjs "^1.10.7"
+    opize-components "^0.1.6"
+    phosphor-react "^1.4.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-i18next "^11.15.4"
+    react-router-dom "^6.2.1"
+    react-scripts "5.0.0"
+    react-syntax-highlighter "^15.4.5"
+    storybook-react-router "^1.0.8"
+    styled-components "^5.3.3"
+    swiper "^8.0.6"
+    web-vitals "^2.1.4"
+
+opize-components@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/opize-components/-/opize-components-0.1.8.tgz#ec5e7613d3f23691fdfc4d7fee9abe36d516c0d5"
+  integrity sha512-ECHsLRJ868XYvSVXKS8MC3O6Lau44culXVPWQI7Nb3BjCZA/ljHuQiLCRDDvLClUGEHziFC0gDncdlah0RB7fg==
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.2"
+    "@testing-library/react" "^12.1.2"
+    "@testing-library/user-event" "^13.5.0"
+    axios "^0.26.0"
+    dayjs "^1.10.7"
+    opize-components "^0.1.7"
+    phosphor-react "^1.4.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-i18next "^11.15.4"
+    react-router-dom "^6.2.1"
+    react-scripts "5.0.0"
+    react-syntax-highlighter "^15.4.5"
+    storybook-react-router "^1.0.8"
+    styled-components "^5.3.3"
+    swiper "^8.0.6"
+    web-vitals "^2.1.4"
+
+opize-components@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/opize-components/-/opize-components-0.1.9.tgz#1fcba39c7831066455642a7228391b68e15650da"
+  integrity sha512-PAWp7nsbC6QhduLzlqpIdI8T2EZHVUJ4zqICiZ79r4V0ALkmSI6KmOOdxgSv30YZwc/xcV50nCG+wG5PqHLGcg==
+  dependencies:
+    "@testing-library/jest-dom" "^5.16.2"
+    "@testing-library/react" "^12.1.2"
+    "@testing-library/user-event" "^13.5.0"
+    axios "^0.26.0"
+    dayjs "^1.10.7"
+    opize-components "^0.1.8"
+    phosphor-react "^1.4.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-i18next "^11.15.4"
+    react-router-dom "^6.2.1"
+    react-scripts "5.0.0"
+    react-syntax-highlighter "^15.4.5"
+    storybook-react-router "^1.0.8"
+    styled-components "^5.3.3"
+    swiper "^8.0.6"
+    web-vitals "^2.1.4"
+
 optionator@^0.8.1:
   version "0.8.3"
   resolved "https://registry.npmjs.org/optionator/-/optionator-0.8.3.tgz"
@@ -11776,7 +11890,7 @@ react-textarea-autosize@^8.3.0:
 
 react@^17.0.2:
   version "17.0.2"
-  resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"

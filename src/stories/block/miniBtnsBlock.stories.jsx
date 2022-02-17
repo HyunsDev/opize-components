@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { MiniBtnsBlock } from '../../lib/block';
+import { MiniBtnsBlock } from '../../lib';
 
 export default {
   title: 'block/MiniBtnsBlock',

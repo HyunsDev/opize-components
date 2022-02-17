@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Page } from '../../lib/page';
+import { Page } from '../../lib';
 
 export default {
   title: 'page/page',

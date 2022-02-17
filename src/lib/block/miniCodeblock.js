@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Div = styled.div`
     display: flex;

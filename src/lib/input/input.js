@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from 'react';
 
 export const Input = styled.input`
     border-radius: 8px;

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { UploadSimple } from "phosphor-react";
+import React from 'react';
 const InputBlock = styled.div`
     font-size: 14px;
     width: 100%;

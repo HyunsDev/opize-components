@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from 'react';
 const PageDivver = styled.div`
     margin: 0 auto;
     width: ${props => props.width}px;

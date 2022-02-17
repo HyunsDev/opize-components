@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Link } from 'react-router-dom';

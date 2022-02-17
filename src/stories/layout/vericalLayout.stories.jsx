@@ -1,8 +1,8 @@
 import React from 'react';
 import '../var.css'
 
-import { VerticalLayout } from '../../lib/layout';
-import { Input } from '../../lib/input/input';
+import { VerticalLayout } from '../../lib';
+import { Input } from '../../lib/input';
 
 export default {
   title: 'layout/VerticalLayout',

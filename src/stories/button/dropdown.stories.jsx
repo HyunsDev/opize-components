@@ -1,7 +1,7 @@
 import React from 'react';
 import '../var.css'
 
-import { Dropdown } from '../../lib/button';
+import { Dropdown } from '../../lib';
 
 export default {
   title: 'button/Dropdown',
