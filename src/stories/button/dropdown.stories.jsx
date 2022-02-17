@@ -1,17 +1,17 @@
 import React from 'react';
 import '../var.css'
 
-import { Header } from '../lib/button/dropdown';
+import { Dropdown } from '../../lib/button/dropdown';
 
 export default {
   title: 'button/Dropdown',
-  component: Header,
+  component: Dropdown,
   argTypes: {
 
   },
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => <Dropdown {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

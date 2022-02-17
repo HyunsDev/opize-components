@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Spinner } from '../spinner';
+import { Spinner } from '../component/spinner';
 
 const BtnSubmitDiv = styled.div`
     position: relative;
