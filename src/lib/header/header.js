@@ -87,7 +87,7 @@ export function Header(props) {
                 {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
                 {
                     props.isLogin
-                        ? <Dropdown direction='right' name={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
+                        ? <Dropdown direction='right' label={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
                         : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn>
                 }
             </Items>

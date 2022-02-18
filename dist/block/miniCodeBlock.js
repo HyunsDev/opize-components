@@ -93,7 +93,7 @@ export function MiniCodeBlock(props) {
   const [isFold, setFold] = useState(true);
   return /*#__PURE__*/React.createElement(Div, null, /*#__PURE__*/React.createElement(Info, {
     onClick: () => setFold(!isFold)
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Name, null, props.title), /*#__PURE__*/React.createElement(Id, null, props.subTitle)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Email, null, props.info))), /*#__PURE__*/React.createElement(InDetail, {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Name, null, props.title), /*#__PURE__*/React.createElement(Id, null, props.subtitle)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Email, null, props.info))), /*#__PURE__*/React.createElement(InDetail, {
     isFold: isFold
   }, /*#__PURE__*/React.createElement(SyntaxHighlighter, {
     language: "json",
@@ -108,7 +108,7 @@ export function MiniCodeBlock(props) {
 }
 MiniCodeBlock.defaultProps = {
   title: '',
-  subTitle: '',
+  subtitle: '',
   info: '',
   links: []
 };

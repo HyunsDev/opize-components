@@ -84,7 +84,7 @@ export function Header(props) {
     key: i
   }, e.label)), props.isLogin ? /*#__PURE__*/React.createElement(Dropdown, {
     direction: "right",
-    name: props.user.name,
+    label: props.user.name,
     img: props.user.profileImage,
     menus: props.userMenus
   }) : /*#__PURE__*/React.createElement(LoginBtn, {
