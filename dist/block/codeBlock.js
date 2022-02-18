@@ -113,7 +113,7 @@ export function CodeBlock(props) {
   }, /*#__PURE__*/React.createElement(IconDiv, null, /*#__PURE__*/React.createElement("img", {
     src: props.icon,
     alt: props.title
-  })), /*#__PURE__*/React.createElement(Info, null, /*#__PURE__*/React.createElement(Name, null, props.title, /*#__PURE__*/React.createElement("span", null, props.code)), /*#__PURE__*/React.createElement(InfoDesc, null, props.desc))), /*#__PURE__*/React.createElement(InDetail, {
+  })), /*#__PURE__*/React.createElement(Info, null, /*#__PURE__*/React.createElement(Name, null, props.title, /*#__PURE__*/React.createElement("span", null, props.subtitle)), /*#__PURE__*/React.createElement(InfoDesc, null, props.desc))), /*#__PURE__*/React.createElement(InDetail, {
     isFold: isFold
   }, /*#__PURE__*/React.createElement(SyntaxHighlighter, {
     language: "json",

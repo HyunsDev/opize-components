@@ -107,7 +107,7 @@ export function MiniCodeBlock(props) {
             <Info onClick={() => setFold(!isFold)}>
                 <div>
                     <Name>{props.title}</Name>
-                    <Id>{props.subTitle}</Id>
+                    <Id>{props.subtitle}</Id>
                 </div>
                 <div>
                     <Email>{props.info}</Email>
@@ -129,7 +129,7 @@ export function MiniCodeBlock(props) {
 
 MiniCodeBlock.defaultProps = {
     title: '',
-    subTitle: '',
+    subtitle: '',
     info: '',
     links: [],
 }

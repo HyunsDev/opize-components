@@ -81,6 +81,6 @@ HorizonLNB.defaultProps = {
     onClick: () => {},
     label: 'example2'
   }],
-  exact: true,
+  exact: false,
   selected: 'example1'
 };
