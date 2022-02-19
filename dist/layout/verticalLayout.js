@@ -16,6 +16,7 @@ const Title = styled.div`
 const Children = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     width: 100%;
     gap: 8px;
 `;

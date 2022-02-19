@@ -50,7 +50,7 @@ const BtnDivver = styled.div`
     
 `;
 export function Btn(props) {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BtnDivver, null, /*#__PURE__*/React.createElement(BtnSubmitDiv, {
+  return /*#__PURE__*/React.createElement(BtnDivver, null, /*#__PURE__*/React.createElement(BtnSubmitDiv, {
     isLoading: props.isLoading,
     backgroundColor: props.backgroundColor,
     backgroundColorHover: props.backgroundColorHover
@@ -67,7 +67,7 @@ export function Btn(props) {
     value: props.label,
     onClick: props.onClick,
     color: props.color
-  }))));
+  })));
 }
 Btn.defaultProps = {
   backgroundColor: "var(--grey3)",

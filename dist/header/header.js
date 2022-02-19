@@ -11,7 +11,7 @@ const Divver = styled.div`
     display: flex;
     z-index: 10;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 52px;
     justify-content: space-between;
     padding: 0px 8px;
@@ -38,9 +38,19 @@ const MenuBtn = styled(Link)`
     font-size: 14px;
     min-height: 36px;
     box-sizing: border-box;
+
+    	
+    @media (max-width: 600px) {
+        display: none;
+    }
     
     &:hover {
         background-color: var(--greyPlaceholder)
+    }
+`;
+const SubComponent = styled.div`
+    @media (max-width: 600px) {
+        display: none;
     }
 `;
 const LoginBtn = styled(Link)`
@@ -79,7 +89,9 @@ export function Header(props) {
     isTop: isTop
   }, /*#__PURE__*/React.createElement(Items, null, /*#__PURE__*/React.createElement(Dropdown, _extends({}, props.projects[props.app], {
     menus: Object.values(props.projects)
-  }))), /*#__PURE__*/React.createElement(Items, null, props.menus.map((e, i) => /*#__PURE__*/React.createElement(MenuBtn, {
+  })), props.subComponents.map((e, i) => /*#__PURE__*/React.createElement(SubComponent, {
+    key: i
+  }, e))), /*#__PURE__*/React.createElement(Items, null, props.menus.map((e, i) => /*#__PURE__*/React.createElement(MenuBtn, {
     to: e.to,
     key: i
   }, e.label)), props.isLogin ? /*#__PURE__*/React.createElement(Dropdown, {
@@ -104,6 +116,7 @@ Header.defaultProps = {
       label: 'example Project'
     }
   },
+  subComponents: [],
   menus: [],
   userMenus: [],
   app: 'example',
