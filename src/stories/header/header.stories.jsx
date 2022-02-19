@@ -76,13 +76,13 @@ SubComponents.args = {
       to: '/',
       img: 'https://static.opize.me/opize.png',
       label: 'example Project'
-  }} menus={Object.values({
-    example: {
-        to: '/',
-        img: 'https://static.opize.me/opize.png',
-        label: 'example Project'
-    }
-  })} />
+    }} menus={Object.values({
+      example: {
+          to: '/',
+          img: 'https://static.opize.me/opize.png',
+          label: 'example Project'
+      }
+    })} />
   ]
 };
 

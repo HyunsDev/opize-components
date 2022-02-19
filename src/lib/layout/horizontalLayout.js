@@ -8,10 +8,6 @@ const Div = styled.div`
     margin-top: ${props => props.marginTop}px;
     gap: 8px;
 
-    &:hover {
-        background-color: rgba(0,0,0,0.08);
-    }
-
     @media (max-width: 600px) {
         flex-direction: column;
     }
