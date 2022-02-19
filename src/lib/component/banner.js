@@ -8,13 +8,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const Divver = styled.div`
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
 `
 
 const BannerImg = styled.img`
-    width: 600px;
-    height: 90px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90px;
     border-radius: 8px;
 `
 

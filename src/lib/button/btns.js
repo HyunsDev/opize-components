@@ -54,16 +54,14 @@ const BtnDivver = styled.div`
 
 export function Btn(props) {
     return (
-        <>
-            <BtnDivver>
-                <BtnSubmitDiv isLoading={props.isLoading} backgroundColor={props.backgroundColor} backgroundColorHover={props.backgroundColorHover}>
-                    <SpinnerDiv size={20} show={props.isLoading}>
-                        <Spinner size={20} color={props.color} show={props.isLoading} />
-                    </SpinnerDiv>
-                    <BtnSubmitInput show={props.isLoading} type={props.type} value={props.label} onClick={props.onClick} color={props.color} />
-                </BtnSubmitDiv>
-            </BtnDivver>
-        </>
+        <BtnDivver>
+            <BtnSubmitDiv isLoading={props.isLoading} backgroundColor={props.backgroundColor} backgroundColorHover={props.backgroundColorHover}>
+                <SpinnerDiv size={20} show={props.isLoading}>
+                    <Spinner size={20} color={props.color} show={props.isLoading} />
+                </SpinnerDiv>
+                <BtnSubmitInput show={props.isLoading} type={props.type} value={props.label} onClick={props.onClick} color={props.color} />
+            </BtnSubmitDiv>
+        </BtnDivver>
     )
 }
 

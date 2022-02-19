@@ -2,7 +2,7 @@ import React from 'react';
 import '../var.css'
 
 import { HorizontalLayout } from '../../lib';
-import { Input } from '../../lib/input';
+import { Input, Btn } from '../../lib';
 
 export default {
   title: 'layout/HorizontalLayout',
@@ -19,5 +19,5 @@ Primary.args = {
   primary: true,
   label: 'OPIZE',
   marginTop: 0,
-  children: <Input />
+  children: <><Input /><Btn /></>
 };

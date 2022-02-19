@@ -6,6 +6,15 @@ const Div = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-top: ${props => props.marginTop}px;
+    gap: 8px;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `
 
 const Left = styled.div`

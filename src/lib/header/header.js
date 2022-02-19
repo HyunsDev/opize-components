@@ -11,7 +11,7 @@ const Divver = styled.div`
     display: flex;
     z-index: 10;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 52px;
     justify-content: space-between;
     padding: 0px 8px;
@@ -40,9 +40,20 @@ const MenuBtn = styled(Link)`
     font-size: 14px;
     min-height: 36px;
     box-sizing: border-box;
+
+    	
+    @media (max-width: 600px) {
+        display: none;
+    }
     
     &:hover {
         background-color: var(--greyPlaceholder)
+    }
+`
+
+const SubComponent = styled.div`
+    @media (max-width: 600px) {
+        display: none;
     }
 `
 
@@ -82,6 +93,9 @@ export function Header(props) {
         <Divver isTop={isTop}>
             <Items>
                 <Dropdown {...props.projects[props.app]} menus={Object.values(props.projects)} />
+                {
+                    props.subComponents.map((e, i) => <SubComponent key={i}>{e}</SubComponent>)
+                }
             </Items>
             <Items>
                 {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
@@ -105,6 +119,7 @@ Header.defaultProps = {
             label: 'example Project'
         }
     },
+    subComponents: [],
     menus: [],
     userMenus: [],
     app: 'example',
