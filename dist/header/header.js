@@ -69,6 +69,22 @@ const LoginBtn = styled(Link)`
         background-color: rgba(0,0,0,0.08)
     }
 `;
+const LoginBtnA = styled.a`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 200ms;
+    color: #2D6560;
+    font-weight: 800;
+    gap: 8px;
+    font-size: 14px;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.08)
+    }
+`;
 export function Header(props) {
   const {
     t
@@ -99,7 +115,12 @@ export function Header(props) {
     label: props.user.name,
     img: props.user.profileImage,
     menus: props.userMenus
-  }) : /*#__PURE__*/React.createElement(LoginBtn, {
+  }) : props.loginTo.includes('http') ? /*#__PURE__*/React.createElement(LoginBtnA, {
+    href: props.loginTo
+  }, t('login'), /*#__PURE__*/React.createElement(ArrowRight, {
+    size: 20,
+    weight: "bold"
+  })) : /*#__PURE__*/React.createElement(LoginBtn, {
     to: props.loginTo
   }, t('login'), /*#__PURE__*/React.createElement(ArrowRight, {
     size: 20,

@@ -74,6 +74,23 @@ const LoginBtn = styled(Link)`
     }
 `
 
+const LoginBtnA = styled.a`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 200ms;
+    color: #2D6560;
+    font-weight: 800;
+    gap: 8px;
+    font-size: 14px;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.08)
+    }
+`
+
 export function Header(props) {
     const { t } = useTranslation('translation')
     const [isTop, setIsTop] = useState(true)
@@ -102,7 +119,9 @@ export function Header(props) {
                 {
                     props.isLogin
                         ? <Dropdown direction='right' label={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
-                        : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn>
+                        : props.loginTo.includes('http')
+                            ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
+                            : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
                 }
             </Items>
         </Divver>
