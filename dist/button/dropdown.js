@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import React from 'react';
-import Opize from '../assets/opize.png';
 const SelectorDivver = styled.div`
     z-index: ${props => props.isOpen ? 999 : 0};
     box-sizing: border-box;
@@ -121,10 +120,10 @@ export function Dropdown(props) {
     }
   }, /*#__PURE__*/React.createElement(NowPage, {
     isOpen: isOpen
-  }, /*#__PURE__*/React.createElement("img", {
+  }, props.img && /*#__PURE__*/React.createElement("img", {
     src: props.img,
     alt: "\uB85C\uACE0"
-  }), /*#__PURE__*/React.createElement("div", null, props.label)), /*#__PURE__*/React.createElement(Selector, {
+  }), props.label && /*#__PURE__*/React.createElement("div", null, props.label)), /*#__PURE__*/React.createElement(Selector, {
     isOpen: isOpen,
     direction: props.direction
   }, props.menus && props.menus.map((e, i) => {
@@ -152,8 +151,6 @@ export function Dropdown(props) {
   }));
 }
 Dropdown.defaultProps = {
-  img: Opize,
-  label: 'Opize',
   menus: [],
   direction: 'left'
 };
