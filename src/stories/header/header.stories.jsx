@@ -90,6 +90,7 @@ export const unLogin = Template.bind({});
 unLogin.args = {
   primary: true,
   isLogin: false,
+  loginTo: '/login',
   app: 'example',
   projects: {
     example: {

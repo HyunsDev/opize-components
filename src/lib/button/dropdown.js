@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 import React from 'react';
 
-import Opize from '../assets/opize.png'
-
 const SelectorDivver = styled.div`
     z-index: ${props => props.isOpen ? 999 : 0};
     box-sizing: border-box;
@@ -127,8 +125,8 @@ export function Dropdown(props) {
         <>
             <SelectorDivver isOpen={isOpen} onClick={() => { setOpen(!isOpen) }}>
                 <NowPage isOpen={isOpen}>
-                    <img src={props.img} alt="로고" />
-                    <div>{props.label}</div>
+                    {props.img && <img src={props.img} alt="로고" />}
+                    {props.label && <div>{props.label}</div>}
                 </NowPage>
                 <Selector isOpen={isOpen} direction={props.direction}>
                     {
@@ -159,8 +157,6 @@ export function Dropdown(props) {
 }
 
 Dropdown.defaultProps = {
-    img: Opize,
-    label: 'Opize',
     menus: [],
     direction: 'left',
 }

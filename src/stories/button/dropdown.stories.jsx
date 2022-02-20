@@ -1,6 +1,8 @@
 import React from 'react';
 import '../var.css'
 
+import Opize from '../../lib/assets/opize.png'
+
 import { Dropdown } from '../../lib';
 
 export default {
@@ -16,6 +18,8 @@ const Template = (args) => <Dropdown {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
+  img: Opize,
+  label: 'Opize',
   menus: [
     {
       to: '/',
