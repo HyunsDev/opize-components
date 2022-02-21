@@ -15,6 +15,7 @@ const BackDiv = styled.div`
     cursor: pointer;
     top: 54px;
     left: 12px;
+    z-index: 11;
 
     &:hover {
         background-color: var(--greyPlaceholder);
