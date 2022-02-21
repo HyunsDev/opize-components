@@ -8,7 +8,7 @@ const Info = styled.div`
 `;
 const Name = styled.div`
     color: var(--grey9);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ const ServiceLink = styled(Link)`
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: ${props => props.padding || 20}px;
     align-items: center;
     background-color: var(--grey1);
     border-radius: 8px;
@@ -37,7 +37,7 @@ const ServiceA = styled.a`
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: ${props => props.padding || 20}px;
     align-items: center;
     background-color: var(--grey1);
     border-radius: 8px;
@@ -79,14 +79,16 @@ const IconDiv = styled.div`
 export function Service(props) {
   if (props.to.includes("http")) {
     return /*#__PURE__*/React.createElement(ServiceA, {
-      href: props.to
+      href: props.to,
+      padding: props.padding
     }, /*#__PURE__*/React.createElement(IconDiv, null, /*#__PURE__*/React.createElement("img", {
       src: props.icon,
       alt: props.name
     })), /*#__PURE__*/React.createElement(Info, null, /*#__PURE__*/React.createElement(Name, null, props.name || "name"), /*#__PURE__*/React.createElement(Desc, null, props.desc || "desc")));
   } else {
     return /*#__PURE__*/React.createElement(ServiceLink, {
-      to: props.to
+      to: props.to,
+      padding: props.padding
     }, /*#__PURE__*/React.createElement(IconDiv, null, /*#__PURE__*/React.createElement("img", {
       src: props.icon,
       alt: props.name

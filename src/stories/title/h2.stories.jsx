@@ -14,4 +14,5 @@ const Template = (args) => <H2 {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
+  size: 20
 };

@@ -19,5 +19,6 @@ Primary.args = {
   to: 'https://opize.me',
   icon: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
   name: '오피즈',
-  desc: '테스트'
+  desc: '테스트',
+  padding: 20,
 };

@@ -4,8 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { ArrowRight } from 'phosphor-react'
 import React from 'react';
+import { useMediaQuery } from "react-responsive"
 
 import { Dropdown } from "../button/dropdown";
+import MenuImg from "../assets/list.svg";
 
 const Divver = styled.div`
     display: flex;
@@ -17,6 +19,7 @@ const Divver = styled.div`
     padding: 0px 8px;
     position: fixed;
     top: 0;
+    left: 0;
     transition: 200ms;
     border-bottom: solid 1px ${props => props.isTop ? "rgba(0,0,0,0)" : "var(--grey2)"} ;
     background-color: ${props => props.isTop ? "transparent" : "#ffffff"};
@@ -27,6 +30,9 @@ const Items = styled.div`
     align-items: center;
     height: 100%;
     gap: 8px;
+    @media (max-width: 600px) {
+        gap: 0px;
+    }
 `
 
 const MenuBtn = styled(Link)`
@@ -91,6 +97,26 @@ const LoginBtnA = styled.a`
     }
 `
 
+const Mobile = ({children}) => {
+    const isMobile = useMediaQuery({
+        maxWidth: 767
+    });
+    return (<>{isMobile && children}</>)
+}
+    
+const PC = ({children}) => {
+    const isPc = useMediaQuery({
+      minWidth: 768
+    });
+    return <>{isPc && children}</>
+}
+
+const MobileDropdown = styled.div`
+    &>div>div:first-child {
+        padding: 8px
+    }
+`
+
 export function Header(props) {
     const { t } = useTranslation('translation')
     const [isTop, setIsTop] = useState(true)
@@ -115,14 +141,26 @@ export function Header(props) {
                 }
             </Items>
             <Items>
-                {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
-                {
-                    props.isLogin
-                        ? <Dropdown direction='right' label={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
-                        : props.loginTo.includes('http')
-                            ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
-                            : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
-                }
+                <PC>
+                    {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
+                    {
+                        props.isLogin
+                            ? <Dropdown direction='right' label={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
+                            : props.loginTo.includes('http')
+                                ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
+                                : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
+                    }
+                </PC>
+                <Mobile>
+                    <MobileDropdown><Dropdown direction='right' img={MenuImg} menus={props.menus.map(e => ({to: e.to, label: e.label})) } /></MobileDropdown>
+                    {
+                        props.isLogin
+                            ? <MobileDropdown><Dropdown direction='right' img={props.user.profileImage} menus={props.userMenus} /></MobileDropdown>
+                            : props.loginTo.includes('http')
+                                ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
+                                : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
+                    }
+                </Mobile>
             </Items>
         </Divver>
     )

@@ -47,13 +47,12 @@ const Selector = styled.div`
     box-shadow: var(--box-shadow);
     overflow: hidden;
     user-select: none;
+    z-index: 10;
     ${props => props.direction || "left"}: 0;
     visibility : ${props => props.isOpen ? 'visible' : 'hidden'};
-
     transition: transform 100ms cubic-bezier(0.84,-0.88, 0.01, 2.12), opacity 150ms;
     transform: scale(${props => props.isOpen ? 1 : 0.9});
     transform-origin: ${props => props.direction || "left"} top;
-
     opacity: ${props => props.isOpen ? 1 : 0};
 `;
 const SelectorItem = styled(Link)`
@@ -65,6 +64,7 @@ const SelectorItem = styled(Link)`
     text-decoration: none;
     transition: 200ms;
     width: 100%;
+    z-index: 10;
 
     img {
         height: 24px;
@@ -89,6 +89,7 @@ const SelectorItemA = styled.a`
     text-decoration: none;
     transition: 200ms;
     width: 100%;
+    z-index: 10;
 
     img {
         height: 24px;
@@ -110,6 +111,7 @@ const CloseBackground = styled.div`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
 `;
 export function Dropdown(props) {
   const [isOpen, setOpen] = useState(false);
