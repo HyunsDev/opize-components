@@ -1,5 +1,6 @@
 import { ArrowLeft } from "phosphor-react"
 import styled from "styled-components"
+import React from 'react';
 
 const BackDiv = styled.div`
     position: fixed;
