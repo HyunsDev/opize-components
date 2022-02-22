@@ -66,8 +66,8 @@ export function Btn(props) {
 }
 
 Btn.defaultProps = {
-    backgroundColor: "var(--grey3)",
-    backgroundColorHover: 'var(--grey4)',
+    backgroundColor: "var(--grey2)",
+    backgroundColorHover: 'var(--grey3)',
     color: "var(--grey9)",
     type: 'button',
     label: 'label',
