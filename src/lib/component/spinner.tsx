@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import React from 'react';
+import '../var.css'
 
 interface Loader {
     size: number;
@@ -76,5 +77,6 @@ export const Spinner = (props:Spinner) => {
 
 Spinner.defaultProps = {
     strokeWidth: 4,
-    color: 'var(--grey5)'
+    color: 'var(--grey9)',
+    size: 32,
 }
