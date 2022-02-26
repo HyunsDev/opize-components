@@ -1,8 +1,15 @@
 import styled from "styled-components";
 import { Spinner } from '../component/spinner';
 import React from 'react';
+import '../var.css'
 
-const BtnSubmitDiv = styled.div`
+interface BtnSubmitDiv {
+    backgroundColor: string;
+    isLoading: boolean;
+    backgroundColorHover: string;
+}
+
+const BtnSubmitDiv = styled.div<BtnSubmitDiv>`
     position: relative;
     display: flex;
     align-items: center;
@@ -23,7 +30,12 @@ const BtnSubmitDiv = styled.div`
     }
 `
 
-const SpinnerDiv = styled.div`
+interface SpinnerDiv {
+    show?: boolean;
+    size: number;
+}
+
+const SpinnerDiv = styled.div<SpinnerDiv>`
     display: flex;
     background-color: inherit;
     border-radius: 8px;
@@ -35,7 +47,11 @@ const SpinnerDiv = styled.div`
     }
 `
 
-const BtnSubmitInput = styled.input`
+interface BtnSubmitInput {
+    color: string;
+}
+
+const BtnSubmitInput = styled.input<BtnSubmitInput>`
     z-index: 3;
     min-height: 40px;
     padding: 8px 16px;
@@ -48,20 +64,26 @@ const BtnSubmitInput = styled.input`
     font-weight: 800;
 `
 
-const BtnDivver = styled.div`
-    
-`
+interface Btn {
+    isLoading: boolean;
+    backgroundColor: string;
+    backgroundColorHover: string;
+    color: string;
+    label: string;
+    onClick: () => void;
+    type: 'button' | 'submit';
+}
 
-export function Btn(props) {
+export function Btn(props:Btn) {
     return (
-        <BtnDivver>
+        <div>
             <BtnSubmitDiv isLoading={props.isLoading} backgroundColor={props.backgroundColor} backgroundColorHover={props.backgroundColorHover}>
                 <SpinnerDiv size={20} show={props.isLoading}>
-                    <Spinner size={20} color={props.color} show={props.isLoading} />
+                    <Spinner size={20} color={props.color} />
                 </SpinnerDiv>
-                <BtnSubmitInput show={props.isLoading} type={props.type} value={props.label} onClick={props.onClick} color={props.color} />
+                <BtnSubmitInput type={props.type} value={props.label} onClick={props.onClick} color={props.color} />
             </BtnSubmitDiv>
-        </BtnDivver>
+        </div>
     )
 }
 
@@ -75,7 +97,7 @@ Btn.defaultProps = {
     isLoading: false,
 }
 
-export function ColorBtn(props) {
+export function ColorBtn(props:Btn) {
     return (
         <Btn {...props} color='var(--teal0)' backgroundColor='var(--teal5)' backgroundColorHover='var(--teal6)' />
     )

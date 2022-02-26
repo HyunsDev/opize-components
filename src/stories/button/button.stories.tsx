@@ -1,5 +1,5 @@
 import React from 'react';
-import '../var.css'
+import { Story, Meta } from '@storybook/react/types-6-0'
 
 import { Btn } from '../../lib';
 
@@ -10,26 +10,12 @@ export default {
     color: { control: 'color' },
     backgroundColor: { control: 'color' },
     backgroundColorHover: { control: 'color' },
-    type: { control: {
-      type: 'select',
-      options: [ 'button', 'submit' ]
-    }},
-    label: {control: 'text'},
-    isLoading: { control: 'boolean' },
   },
-};
+} as Meta
 
-const Template = (args) => <Btn {...args} />;
+const Template: Story = (args) => <Btn {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-};
-
-export const ColorBtn = Template.bind({});
-ColorBtn.args = {
-  primary: false,
-  color: 'var(--teal0)',
-  backgroundColor: 'var(--teal5)',
-  backgroundColorHover: 'var(--teal6)',
 };

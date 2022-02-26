@@ -1,7 +1,11 @@
 import styled, { keyframes } from "styled-components";
 import React from 'react';
 
-const Loader = styled.div`
+interface Loader {
+    size: number;
+}
+
+const Loader = styled.div<Loader>`
     position: relative;
     margin: 0 auto;
     width: ${props => props.size}px;
@@ -54,12 +58,23 @@ const Circular = styled.svg`
     }
 `
 
-export const Spinner = (props) => {
+interface Spinner {
+    size: number;
+    color: string;
+    strokeWidth: number;
+}
+
+export const Spinner = (props:Spinner) => {
     return (
         <Loader size={props.size}>
             <Circular viewBox="25 25 50 50" color={props.color}>
-                <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth={props.strokeWidth || "4"} strokeMiterlimit="10" />
+                <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth={props.strokeWidth} strokeMiterlimit="10" />
             </Circular>
         </Loader>
     )
+}
+
+Spinner.defaultProps = {
+    strokeWidth: 4,
+    color: 'var(--grey5)'
 }
