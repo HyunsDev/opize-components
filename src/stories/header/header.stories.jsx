@@ -23,7 +23,12 @@ Primary.args = {
       to: '/',
       img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
       label: 'example Project'
-    }
+    },
+    example2: {
+      to: '/',
+      img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+      label: 'example Project 2'
+    },
   },
   menus: [
     {
@@ -31,22 +36,30 @@ Primary.args = {
       label: '메뉴'
     }
   ],
-  userMenus: [
-    {
-      to: '/',
-      label: '유저 메뉴'
-    }
-  ],
   user: {
     name: '유저',
-    profileImage: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+    img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+    isLogin: true,
+    login: {
+      to: '/',
+      label: 'loginLabel'
+    },
+    menus: [
+      {
+        to: '/',
+        label: '유저 메뉴'
+      }
+    ]
+  },
+  cta: {
+    label: 'button.label',
+    to: '/'
   }
 };
 
 export const SubComponents = Template.bind({});
 SubComponents.args = {
   primary: true,
-  isLogin: true,
   app: 'example',
   projects: {
     example: {
@@ -61,15 +74,20 @@ SubComponents.args = {
       label: '메뉴'
     }
   ],
-  userMenus: [
-    {
-      to: '/',
-      label: '유저 메뉴'
-    }
-  ],
   user: {
     name: '유저',
-    profileImage: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+    img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+    isLogin: true,
+    login: {
+      to: '/',
+      label: 'loginLabel'
+    },
+    menus: [
+      {
+        to: '/',
+        label: '유저 메뉴'
+      }
+    ]
   },
   subComponents: [
     <Dropdown {...{
@@ -89,7 +107,6 @@ SubComponents.args = {
 export const unLogin = Template.bind({});
 unLogin.args = {
   primary: true,
-  isLogin: false,
   loginTo: '/login',
   app: 'example',
   projects: {
@@ -105,14 +122,19 @@ unLogin.args = {
       label: '메뉴'
     }
   ],
-  userMenus: [
-    {
-      to: '/',
-      label: '유저 메뉴'
-    }
-  ],
   user: {
     name: '유저',
-    profileImage: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
-  }
+    img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+    isLogin: false,
+    login: {
+      to: '/',
+      label: 'loginLabel'
+    },
+    menus: [
+      {
+        to: '/',
+        label: '유저 메뉴'
+      }
+    ]
+  },
 };

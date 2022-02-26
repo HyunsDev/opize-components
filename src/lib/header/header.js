@@ -117,8 +117,114 @@ const MobileDropdown = styled.div`
     }
 `
 
+const CTAButtonDiv = styled.div`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    transition: 200ms;
+    color: var(--grey9);
+    font-size: 14px;
+    min-height: 36px;
+    box-sizing: border-box;
+    border: solid 1px var(--grey5);
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+    
+    &:hover {
+        background-color: var(--greyPlaceholder)
+    }
+`
+const CTAButtonA = styled(CTAButtonDiv)`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    transition: 200ms;
+    color: var(--grey9);
+    font-size: 14px;
+    min-height: 36px;
+    box-sizing: border-box;
+    border: solid 1px var(--grey5);
+    	
+    @media (max-width: 600px) {
+        display: none;
+    }
+    
+    &:hover {
+        background-color: var(--greyPlaceholder)
+    }
+`
+
+const CTAButtonLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    transition: 200ms;
+    color: var(--grey9);
+    font-size: 14px;
+    min-height: 36px;
+    box-sizing: border-box;
+    border: solid 1px var(--grey5);
+    	
+    @media (max-width: 600px) {
+        display: none;
+    }
+    
+    &:hover {
+        background-color: var(--greyPlaceholder)
+    }
+`
+
+function CTAButton(props) {
+    if (props?.label) {
+        if (props.to) {
+            if (props.to.includes('http')) {
+                return <CTAButtonA href={props.to}>{props.label}</CTAButtonA>
+            } else {
+                return <CTAButtonLink to={props.to}>{props.label}</CTAButtonLink>
+            }
+        } else {
+            return <CTAButtonDiv onClick={props.onClick}>{props.label}</CTAButtonDiv>
+        }
+    } else {
+        return <></>
+    }
+}
+
+function User(props) {
+    const isPc = useMediaQuery({
+        minWidth: 768
+      });
+
+    if (props.isLogin) {
+        // 로그인
+        if (isPc) {
+            return <Dropdown direction='right' img={props.img} menus={props.menus} />
+        } else {
+            return (
+                <MobileDropdown>
+                    <Dropdown direction='right' img={props.img} menus={props.menus} />
+                </MobileDropdown>
+            )
+        }
+    } else {
+        // 비로그인
+        if (props.login.to.includes('http')) {
+            return <LoginBtnA href={props.login.to}>{props.login.label}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
+        } else {
+            return <LoginBtn to={props.login.to}>{props.login.label}<ArrowRight size={20} weight="bold" /></LoginBtn>
+        }
+    }
+}
+
 export function Header(props) {
-    const { t } = useTranslation('translation')
     const [isTop, setIsTop] = useState(true)
 
     const onScroll = () => {
@@ -143,32 +249,18 @@ export function Header(props) {
             <Items>
                 <PC>
                     {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
-                    {
-                        props.isLogin
-                            ? <Dropdown direction='right' label={props.user.name} img={props.user.profileImage} menus={props.userMenus} />
-                            : props.loginTo.includes('http')
-                                ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
-                                : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
-                    }
                 </PC>
                 <Mobile>
                     <MobileDropdown><Dropdown direction='right' img={MenuImg} menus={props.menus.map(e => ({to: e.to, label: e.label})) } /></MobileDropdown>
-                    {
-                        props.isLogin
-                            ? <MobileDropdown><Dropdown direction='right' img={props.user.profileImage} menus={props.userMenus} /></MobileDropdown>
-                            : props.loginTo.includes('http')
-                                ? <LoginBtnA href={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtnA> 
-                                : <LoginBtn to={props.loginTo}>{t('login')}<ArrowRight size={20} weight="bold" /></LoginBtn> 
-                    }
                 </Mobile>
+                <CTAButton {...props.cta} />
+                <User {...props.user} />
             </Items>
         </Divver>
     )
 }
 
 Header.defaultProps = {
-    isLogin: false,
-    loginTo: '/login',
     projects: {
         example: {
             to: '/',
@@ -178,10 +270,17 @@ Header.defaultProps = {
     },
     subComponents: [],
     menus: [],
-    userMenus: [],
     app: 'example',
+    cta: {},
     user: {
+        isLogin: false,
+        login: {
+            to: '',
+            label: ''
+        },
         name: 'example user',
-        profileImage: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
-    }
+        img: 'https://static.opize.me/opize/1645012676462/opize-circle.png',
+        menus: []
+    },
+
 }
