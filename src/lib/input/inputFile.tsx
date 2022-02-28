@@ -18,7 +18,7 @@ const InputBtn = styled.div`
     border-radius: 8px;
     transition: 200ms;
     border-radius: 8px;
-    border: solid 2px ${props => props.error ? "var(--red9)" : "var(--grey2)"};
+    border: solid 2px ${(props: {isSelected: boolean}) => props.isSelected ? 'var(--teal1)' : 'var(--grey2)'};
     display: flex;
     align-items: center;
     gap: 16px;
@@ -26,7 +26,7 @@ const InputBtn = styled.div`
     box-sizing: border-box;
 
     &:active{
-        ${props => props.readOnly ? "" : "outline: solid 2px #3359FC"};
+        outline: solid 2px #3359FC;
     }
 
     &::placeholder {
@@ -34,33 +34,41 @@ const InputBtn = styled.div`
     }
 
     &:hover {
-        border: solid 2px ${props => props.error ? "var(--red9)" : "var(--teal1)"};
+        border: solid 2px var(--teal2);
     }
 
     &:focus {
         outline: 0;
-        border: solid 2px ${props => props.error ? "var(--red9)" : "var(--teal4)"};
+        border: solid 2px var(--teal4);
     }
 `
 
-export function InputFile(props) {
+interface InputFileIF {
+    value: {
+        lastModified: number;
+        lastModifiedDate: any;
+        name: string;
+        size: number;
+        type: string;
+        webkitRelativePath: string;
+    } | null;
+    onChange: any;
+    label: string;
+}
+
+export function InputFile(props:InputFileIF) {
     const [fileSelected, setFileSelected] = useState(false)
-    const [fileName, setFileName] = useState("")
-    const uploadFile = useRef()
+    const uploadFile = useRef<any>(null)
 
-    useEffect(() => {
-        if (!props.uploadFile) setFileName('')
-    }, [props.uploadFile])
-
-    const onChange = (event) => {
-        if (event.target.files) {
-            setFileName(event.target.files[0].name)
-            props.setUploadFile(event.target.files[0])
+    const onChange = (event: any) => {
+        const { files } = event.target;
+        if (files) {
+            props.onChange(files[0])
             setFileSelected(true)
         }
     }
 
-    const onClick = (event) => {
+    const onClick = (event: any) => {
         event.preventDefault();
         uploadFile.current.click()
     }
@@ -68,12 +76,13 @@ export function InputFile(props) {
     return (
         <InputBlock>
             <Input ref={uploadFile} type="file" id="file" onChange={onChange}></Input>
-            <InputBtn onClick={onClick}><UploadSimple size={24} color={fileSelected ? "var(--teal5)" : "var(--grey5)"} />{fileName || 'File Upload'}</InputBtn>
+            <InputBtn onClick={onClick} isSelected={fileSelected}><UploadSimple size={24} color={fileSelected ? "var(--teal5)" : "var(--grey5)"} />{props?.value?.name || props.label}</InputBtn>
         </InputBlock>
     )
 }
 
 InputFile.defaultProps = {
-    setUploadFile: () => { },
-    uploadFile: {},
+    onChange: () => null,
+    value: null,
+    label: '파일 업로드'
 }
