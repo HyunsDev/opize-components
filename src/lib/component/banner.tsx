@@ -25,11 +25,11 @@ interface BannerItem {
     to: string;
 }
 
-interface Banner {
+interface BannerIf {
     banners: BannerItem[];
 }
 
-export function Banner(props:Banner) {
+export function Banner(props:BannerIf) {
     return (
         <Divver>
             <Swiper

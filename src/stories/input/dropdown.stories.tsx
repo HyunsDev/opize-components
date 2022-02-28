@@ -5,7 +5,7 @@ import OpizeLogo from '../assets/opize.png'
 import { Dropdown } from '../../lib';
 
 export default {
-  title: 'button/Dropdown',
+  title: 'input/Dropdown',
   component: Dropdown,
   argTypes: {
   },

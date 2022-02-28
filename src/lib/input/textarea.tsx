@@ -11,17 +11,19 @@ const Label = styled.div`
     margin-bottom: 8px;
 `
 
-const Input = styled.input`
+const Input = styled.textarea`
     border-radius: 8px;
     outline: solid 2px ${(props: {error: boolean}) => props.error ? "var(--red9)" : "var(--grey2)"};
     width: 100%;
     height: 40px;
     box-sizing: border-box;
-    transition: 200ms;
-    padding: 0px 16px;
+    transition: outline 200ms, color 200ms;
+    padding: 8px 16px;
     font-size: 16px;
     border: 0;
     color: var(--grey9);
+    resize: vertical;
+    min-height: 100px;
 
     &:hover {
         outline: solid 2px ${(props: {error: boolean}) => props.error ? "var(--red9)" : "var(--teal1)"};
@@ -43,10 +45,8 @@ const Message = styled.div`
     margin-top: 4px;
 `
 
-interface TextFieldInterface {
+interface TextAreaInterface {
     label?: string,
-    type: 'email'| 'number' | 'password'| 'search' | 'tel' | 'url';
-    autoComplete: 'on' | 'off' | 'name' | 'email' | 'username' | 'new-password' | 'current-password' | string;
     placeholder?: string;
     error: boolean;
     message: string;
@@ -55,20 +55,19 @@ interface TextFieldInterface {
 
 }
 
-export function TextField(props:TextFieldInterface) {
+export function Textarea(props:TextAreaInterface) {
     return (
         <LoginDiv>
             {props.label && <Label>{props.label}</Label>}
-            <Input type={props.type} autoComplete={props.autoComplete} placeholder={props.placeholder} error={props.error} value={props.value} onChange={props.onChange} />
+            <Input placeholder={props.placeholder} error={props.error} value={props.value} onChange={props.onChange} />
             <Message error={props.error}>{props.message}</Message>
         </LoginDiv>
     )
 }
 
-TextField.TextFiled = {
+Textarea.TextFiled = {
     placeholder: '',
     autoComplete: 'off',
-    type: 'text',
     error: false,
     onChange: () => { },
 }

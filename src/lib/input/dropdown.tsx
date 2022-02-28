@@ -164,14 +164,14 @@ interface Menu {
     hide?: boolean;
 }
 
-interface Dropdown {
+interface DropdownInterface {
     img?: string;
     label?: string;
     direction: 'left' | 'right';
     menus: Menu[]
 }
 
-export function Dropdown(props:Dropdown) {
+export function Dropdown(props:DropdownInterface) {
     const [isOpen, setOpen] = useState(false)
 
     return (
