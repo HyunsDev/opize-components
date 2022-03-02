@@ -35,41 +35,41 @@ const BtnSubmitDiv = styled.div<BtnStyle>`
     }
 ` 
 
-interface SpinnerDiv {
+interface SpinnerDivIF {
     show?: boolean;
     size: number;
 }
 
-const SpinnerDiv = styled.div<SpinnerDiv>`
+const SpinnerDiv = styled.div`
     display: flex;
     background-color: inherit;
     border-radius: 8px;
     transition: margin-right 400ms;
-    margin-right: ${(props: SpinnerDiv) => props.show ? 0 : -props.size * 1.6}px;
+    margin-right: ${(props: SpinnerDivIF) => props.show ? 0 : -props.size * 1.6}px;
  
     div {
-        visibility: ${(props:SpinnerDiv) => props.show ? "visible" : "hidden"}
+        visibility: ${(props:SpinnerDivIF) => props.show ? "visible" : "hidden"}
     }
 `
 
-interface BtnSubmitInput {
+interface BtnSubmitInputIf {
     color: string;
 }
 
-const BtnSubmitInput = styled.input<BtnSubmitInput>`
+const BtnSubmitInput = styled.input`
     z-index: 3;
     min-height: 36px;
     padding: 8px 16px;
     border-radius: 8px;
     cursor: inherit;
-    color: ${(props:BtnSubmitInput) => props.color};
+    color: ${(props:BtnSubmitInputIf) => props.color};
     font-size: 15px;
     background-color: inherit;
     border: 0;
     font-weight: 800;
 `
 
-interface Button {
+interface ButtonIf {
     isLoading: boolean | undefined;
     color: 'normal' | 'success' | 'error' | 'teal';
     variant: 'text' | 'contained' | 'outlined';
@@ -79,7 +79,7 @@ interface Button {
     type: 'button' | 'submit';
 }
 
-export function Button(props:Button) {
+export function Button(props:ButtonIf) {
     const style = {
         borderColor: 'transparent',
         borderColorHover: 'transparent',
@@ -156,6 +156,12 @@ export function Button(props:Button) {
         }
     }
 
+    const onClick = () => {
+        if (!props.disabled) {
+            props.onClick()
+        }
+    }
+
     return (
         <div>
             <BtnSubmitDiv {...style}>
@@ -164,7 +170,7 @@ export function Button(props:Button) {
                         <Spinner size={20} color={style.color} />
                     </SpinnerDiv>
                 }
-                <BtnSubmitInput type={props.type} value={props.label} onClick={props.onClick} {...style} />
+                <BtnSubmitInput type={props.type} value={props.label} onClick={onClick} {...style} />
             </BtnSubmitDiv>
         </div>
     )

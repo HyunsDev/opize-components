@@ -11,24 +11,33 @@ const Label = styled.div`
     margin-bottom: 8px;
 `
 
+interface InputIf {
+    error: boolean;
+    variant: 'underlined' | 'outlined';
+}
+
 const Input = styled.input`
-    border-radius: 8px;
-    outline: solid 2px ${(props: {error: boolean}) => props.error ? "var(--red9)" : "var(--grey2)"};
+    border-radius: ${(props:InputIf) => props.variant === 'outlined' ? 8 : 0}px;
+    border: ${(props:InputIf) => props.variant === 'outlined' ? 'solid 2px' : '0'};
+    ${(props:InputIf) => props.variant === 'underlined' && 'border-bottom: solid 2px'};
+    border-color: ${(props: InputIf) => props.error ? "var(--red9)" : "var(--grey2)"};
     width: 100%;
     height: 40px;
     box-sizing: border-box;
     transition: 200ms;
-    padding: 0px 16px;
+    padding: 0px ${(props:InputIf) => props.variant === 'outlined' ? 16 : 8}px;
     font-size: 16px;
-    border: 0;
     color: var(--grey9);
+    outline: 0;
 
     &:hover {
-        outline: solid 2px ${(props: {error: boolean}) => props.error ? "var(--red9)" : "var(--teal1)"};
+        outline: 0;
+        border-color: ${(props: InputIf) => props.error ? "var(--red9)" : "var(--teal1)"};
     }
 
     &:focus {
-        outline: solid 2px ${(props: {error: boolean}) => props.error ? "var(--red9)" : "var(--teal4)"};
+        outline: 0;
+        border-color: ${(props: InputIf) => props.error ? "var(--red9)" : "var(--teal4)"};
     }
 
     &::placeholder {
@@ -45,6 +54,7 @@ const Message = styled.div`
 
 interface TextFieldInterface {
     label?: string,
+    variant: 'underlined' | 'outlined';
     type: 'email'| 'number' | 'password'| 'search' | 'tel' | 'url';
     autoComplete: 'on' | 'off' | 'name' | 'email' | 'username' | 'new-password' | 'current-password' | string;
     placeholder?: string;
@@ -59,7 +69,7 @@ export function TextField(props:TextFieldInterface) {
     return (
         <LoginDiv>
             {props.label && <Label>{props.label}</Label>}
-            <Input type={props.type} autoComplete={props.autoComplete} placeholder={props.placeholder} error={props.error} value={props.value} onChange={props.onChange} />
+            <Input variant={props.variant} type={props.type} autoComplete={props.autoComplete} placeholder={props.placeholder} error={props.error} value={props.value} onChange={props.onChange} />
             <Message error={props.error}>{props.message}</Message>
         </LoginDiv>
     )
@@ -67,6 +77,7 @@ export function TextField(props:TextFieldInterface) {
 
 TextField.TextFiled = {
     placeholder: '',
+    variant: 'outlined',
     autoComplete: 'off',
     type: 'text',
     error: false,
