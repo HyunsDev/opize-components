@@ -75,11 +75,11 @@ export function TextField(props:TextFieldInterface) {
     )
 }
 
-TextField.TextFiled = {
+TextField.defaultProps = {
     placeholder: '',
     variant: 'outlined',
     autoComplete: 'off',
     type: 'text',
     error: false,
-    onChange: () => { },
+    onChange: () => null,
 }

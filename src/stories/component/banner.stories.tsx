@@ -14,8 +14,14 @@ const Template: ComponentStory<typeof Banner> = (args) => <Banner {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  banners: [{
-    to: 'https://opize.me',
-    img: 'https://static.opize.me/opize/1645075445187/opize 테스트 배너.png'
-  }]
+  banners: [
+    {
+      to: 'https://opize.me',
+      img: 'https://static.opize.me/opize/1645075445187/opize 테스트 배너.png'
+    },
+    {
+      to: 'https://opize.me',
+      img: 'https://static.opize.me/opize/1645075445187/opize 테스트 배너.png'
+    }
+  ]
 };

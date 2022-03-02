@@ -9,14 +9,14 @@ import 'swiper/css/pagination';
 
 const Divver = styled.div`
     width: 100%;
-    max-width: 600px;
+    max-width: ${(props:{width: number}) => props.width}px;
     margin: 0 auto;
 `
 
 const BannerImg = styled.img`
     width: 100%;
-    max-width: 600px;
-    max-height: 90px;
+    max-width: ${(props:{width: number; height: number}) => props.width}px;
+    max-height: ${(props:{width: number; height: number}) => props.height}px;
     border-radius: 8px;
 `
 
@@ -27,11 +27,13 @@ interface BannerItem {
 
 interface BannerIf {
     banners: BannerItem[];
+    width: number;
+    height: number;
 }
 
 export function Banner(props:BannerIf) {
     return (
-        <Divver>
+        <Divver width={props.width}>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={8}
@@ -48,7 +50,7 @@ export function Banner(props:BannerIf) {
                             return (
                                 <SwiperSlide key={i}>
                                     <a href={e.to || "/"} target={'_blank'} rel="noreferrer">
-                                        <BannerImg src={e.img} alt="" />
+                                        <BannerImg width={props.width} height={props.height} src={e.img} alt="" />
                                     </a>
                                 </SwiperSlide>
                             )
@@ -56,7 +58,7 @@ export function Banner(props:BannerIf) {
                             return (
                                 <SwiperSlide key={i}>
                                     <Link to={e.to || "/"}>
-                                        <BannerImg src={e.img} alt="" />
+                                        <BannerImg width={props.width} height={props.height} src={e.img} alt="" />
                                     </Link>
                                 </SwiperSlide>
                             )
@@ -70,5 +72,6 @@ export function Banner(props:BannerIf) {
 }
 
 Banner.defaultProps = {
-    
+    width: 600,
+    height: 90,
 }
