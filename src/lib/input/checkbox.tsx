@@ -32,6 +32,7 @@ interface FakeCheckBoxIF {
     borderColor: string;
     borderColorHover: string;
     checked: boolean;
+    disabled: boolean;
 }
 
 const FakeCheckBox = styled.div`
@@ -43,7 +44,8 @@ const FakeCheckBox = styled.div`
     background: ${(props: FakeCheckBoxIF) => props.backgroundColor};
     border-radius: 8px;
     transition: 200ms;
-    cursor: pointer;
+
+    cursor: ${(props: FakeCheckBoxIF) => props.disabled ? 'default' : 'cursor'};
 
     &:hover {
         border: solid 1px ${(props: FakeCheckBoxIF) => props.borderColorHover};
@@ -107,7 +109,7 @@ export function Checkbox(props: CheckboxIF) {
     return (
         <CheckBoxDiv>
             <Input type={'checkbox'} checked={props.value} onChange={props.onChange} disabled={props.disabled} />
-            <FakeCheckBox {...style} checked={props.value} onClick={onClick} >
+            <FakeCheckBox {...style} checked={props.value} onClick={onClick} disabled={props.disabled} >
                 <Icon viewBox="0 0 24 24">
                     <polyline points="19 7 10 17 5 12" />
                 </Icon>
