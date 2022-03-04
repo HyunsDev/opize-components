@@ -100,10 +100,14 @@ export function Checkbox(props: CheckboxIF) {
         }
     }
 
+    const onClick = () => {
+        if (!props.disabled) props.onChange(!props.value)
+    }
+
     return (
         <CheckBoxDiv>
             <Input type={'checkbox'} checked={props.value} onChange={props.onChange} disabled={props.disabled} />
-            <FakeCheckBox {...style} checked={props.value} onClick={() => props.onChange(!props.value)} >
+            <FakeCheckBox {...style} checked={props.value} onClick={onClick} >
                 <Icon viewBox="0 0 24 24">
                     <polyline points="19 7 10 17 5 12" />
                 </Icon>
