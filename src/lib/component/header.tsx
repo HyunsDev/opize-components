@@ -164,7 +164,7 @@ const CTAButtonLink = styled(Link)`
     align-items: center;
     text-decoration: none;
     padding: 8px 16px;
-    border-radius: 18px;
+    border-radius: 8px;
     transition: 200ms;
     color: var(--grey9);
     font-size: 14px;
@@ -177,7 +177,8 @@ const CTAButtonLink = styled(Link)`
     }
     
     &:hover {
-        background-color: var(--greyPlaceholder)
+        color: var(--grey0);
+        background-color: var(--grey9)
     }
 `
 
