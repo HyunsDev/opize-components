@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  column: ['img', 'title', 'number', 'boolean', 'button', 'badge'],
+  column: ['img', 'title', 'number', 'boolean', 'button', 'badge', 'unknown'],
   items: [
     {
       title: 'title',

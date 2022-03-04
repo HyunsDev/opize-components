@@ -46,7 +46,7 @@ interface TableBadgeProp {
 interface TableProp {
     column: string[],
     items: {
-        [key: string]: null | string | number | boolean | TableButtonProp | {type: 'badge', value: TableBadgeProp[]};
+        [key: string]: null | string | number | boolean | TableButtonProp | {type: 'badge', value: TableBadgeProp[]} | React.ReactNode | any
     }[]
 }
 
@@ -152,9 +152,11 @@ export function Table(props: TableProp) {
                                 } else if (item && typeof item === "object" && item.type === 'button') {
                                     return <td><TableButton {...item} /></td>
                                 } else if (item && typeof item === "object" && item.type === 'badge') {
-                                    return <td><TableBadges>{item.value.map(badge => <TableBadge {...badge} />)}</TableBadges></td>
+                                    return <td><TableBadges>{item.value.map((badge:TableBadgeProp) => <TableBadge {...badge} />)}</TableBadges></td>
+                                } else if (item) {
+                                    return <td>{item}</td>
                                 } else {
-                                    return <td>{'.'}</td>
+                                    return <td>.</td>
                                 }
                             })}</tr>
                         })
