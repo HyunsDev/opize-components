@@ -1,6 +1,6 @@
 {
   "name": "opize-components",
-  "version": "0.1.23",
+  "version": "1.0.0",
   "private": false,
   "license": "MIT",
   "description": "Opize를 위한 컴포넌트 패키지",
@@ -11,6 +11,11 @@
   "bugs": {
     "url": "https://github.com/HyunsDev/opize-conponents/issues",
     "email": "hello@opize.me"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -72,6 +77,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/preset-react": "^7.16.7",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
