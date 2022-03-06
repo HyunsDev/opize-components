@@ -6,7 +6,6 @@ import React from 'react';
 import { useMediaQuery } from "react-responsive"
 
 import { Dropdown } from "../../lib";
-import MenuImg from "../assets/list.svg";
 
 const Divver = styled.div`
     display: flex;
@@ -283,7 +282,7 @@ export function Header(props:HeaderIf) {
                     {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
                 </PC>
                 <Mobile>
-                    <MobileDropdown><Dropdown direction='right' img={MenuImg} menus={props.menus.map(e => ({to: e.to, label: e.label})) } /></MobileDropdown>
+                    <MobileDropdown><Dropdown direction='right' img={'../assets/list.png'} menus={props.menus.map(e => ({to: e.to, label: e.label})) } /></MobileDropdown>
                 </Mobile>
                 <CTAButton {...props.cta} />
                 <User {...props.user} />
