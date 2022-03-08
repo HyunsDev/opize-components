@@ -163,14 +163,14 @@ export function Table(props: TableProp) {
                 <thead>
                     <tr>
                         {
-                            props.column.map(e => <th>{e}</th>)
+                            props.column.map(e => <th key={e}>{e}</th>)
                         }
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        props.items.map(e => {
-                            return <tr>{props.column.map((column) => {
+                        props.items.map((e,i) => {
+                            return <tr key={i}>{props.column.map((column) => {
                                 const item = e[column]
                                 if (typeof item === 'string') {
                                     if (item.includes('http') || item.includes('.png') || item.includes('.jpg')) {
