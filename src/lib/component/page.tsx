@@ -7,7 +7,7 @@ interface DivverProps {
 }
 
 const Divver = styled.div`
-    max-width: ${(props: DivverProps) => props.width};
+    max-width: ${(props: DivverProps) => props.width}px;
     margin: 100px auto;
     ${(props:DivverProps) => props.marginTop && `margin-top: ${props.marginTop}px;`}
     box-sizing: border-box;
@@ -25,7 +25,7 @@ export function Page(props: PageProps) {
     if (typeof props.width === 'number') {
         width = props.width + 12
     } else {
-        if (props.width === 'normal') width = 700 + 12;
+        if (props.width === 'normal') width = 600 + 12;
         else if (props.width === 'wide') width = 960 + 12;
         else if (props.width === 'full') width = '100vw';
         else width = 700 + 12
