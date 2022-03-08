@@ -141,7 +141,7 @@ const MiniTitle = styled.div`
 
 const MiniSubtitle = styled.div`
     color: var(--grey5);
-        font-size: 12px;
+    font-size: 12px;
 `
 
 const MiniInfo = styled.div`
@@ -158,7 +158,7 @@ const LinkA = styled(Link)`
 `
 
 interface CodeBlockIf {
-    icon: string
+    icon?: string
     title: string;
     subtitle: string;
     desc: string;
@@ -175,9 +175,9 @@ export function CodeBlock(props:CodeBlockIf) {
 
             {props.size === 'normal' 
                 ? <ProjectInfo onClick={() => setFold(!isFold)}>
-                    <IconDiv>
+                    { props.icon &&<IconDiv>
                         <img src={props.icon} alt={props.title} />
-                    </IconDiv>
+                    </IconDiv> }
                     <Info>
                         <Name>{props.title} <span>{props.subtitle}</span></Name>
                         <InfoDesc>{props.desc}</InfoDesc>
@@ -185,7 +185,7 @@ export function CodeBlock(props:CodeBlockIf) {
                 </ProjectInfo>
                 : <ProjectInfoMini onClick={() => setFold(!isFold)}>
                     <div>
-                        <img src={props.icon} alt={props.title} />
+                        { props.icon && <img src={props.icon} alt={props.title} />}
                         <MiniTitle>{props.title}</MiniTitle>
                         <MiniSubtitle>{props.subtitle}</MiniSubtitle>
                     </div>

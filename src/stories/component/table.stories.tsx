@@ -27,7 +27,7 @@ Primary.args = {
         label: 'profile',
         img: OpizeLogo,
       },
-      img: OpizeLogo,
+      img: 'https://static.opize.me/opize.png',
       button: {
         type: 'button',
         label: 'Button',

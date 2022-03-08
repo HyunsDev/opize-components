@@ -1,10 +1,17 @@
 import styled from 'styled-components'
+import React from 'react';
 import { Checkbox } from '..'
+
+const TableDivver = styled.div`
+    width: 100%;
+    overflow-x: scroll;
+`
 
 const TableStyle = styled.table`
     width: 100%;
     text-align: left;
     border-spacing: 0px;
+    overflow-x: scroll;
 
     thead {
         
@@ -151,22 +158,22 @@ function TableProfile(props:TableProfileProp) {
 
 export function Table(props: TableProp) {
     return (
-        <>
+        <TableDivver>
             <TableStyle>
                 <thead>
                     <tr>
                         {
-                            props.column.map(e => <th>{e}</th>)
+                            props.column.map(e => <th key={e}>{e}</th>)
                         }
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        props.items.map(e => {
-                            return <tr>{props.column.map((column) => {
+                        props.items.map((e,i) => {
+                            return <tr key={i}>{props.column.map((column) => {
                                 const item = e[column]
                                 if (typeof item === 'string') {
-                                    if (item.includes('http') || item.includes('.png') || item.includes('.jpg')) {
+                                    if (item.includes('http') && ( item.includes('.png') || item.includes('.jpg') || item.includes('.svg') )) {
                                         return <td><img src={item} alt='' /></td>
                                     } else {
                                         return <td>{item || '.'}</td>
@@ -178,7 +185,7 @@ export function Table(props: TableProp) {
                                 } else if (item && typeof item === "object" && item.type === 'button') {
                                     return <td><TableButton {...item} /></td>
                                 } else if (item && typeof item === "object" && item.type === 'badge') {
-                                    return <td><TableBadges>{item.value.map((badge:TableBadgeProp) => <TableBadge {...badge} />)}</TableBadges></td>
+                                    return <td><TableBadges>{item.value.map((badge:TableBadgeProp, ii:number) => <TableBadge key={ii} {...badge} />)}</TableBadges></td>
                                 } else if (item && typeof item === "object" && item.type === 'profile') {
                                     return <td><TableProfile {...item} /></td>
                                 } else if (item) {
@@ -191,6 +198,6 @@ export function Table(props: TableProp) {
                     }
                 </tbody>
             </TableStyle>
-        </>
+        </TableDivver>
     )
 }
