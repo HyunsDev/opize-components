@@ -185,7 +185,7 @@ export function Table(props: TableProp) {
                                 } else if (item && typeof item === "object" && item.type === 'button') {
                                     return <td><TableButton {...item} /></td>
                                 } else if (item && typeof item === "object" && item.type === 'badge') {
-                                    return <td><TableBadges>{item.value.map((badge:TableBadgeProp) => <TableBadge {...badge} />)}</TableBadges></td>
+                                    return <td><TableBadges>{item.value.map((badge:TableBadgeProp, ii:number) => <TableBadge key={ii} {...badge} />)}</TableBadges></td>
                                 } else if (item && typeof item === "object" && item.type === 'profile') {
                                     return <td><TableProfile {...item} /></td>
                                 } else if (item) {
