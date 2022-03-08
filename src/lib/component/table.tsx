@@ -173,7 +173,7 @@ export function Table(props: TableProp) {
                             return <tr key={i}>{props.column.map((column) => {
                                 const item = e[column]
                                 if (typeof item === 'string') {
-                                    if (item.includes('http') || item.includes('.png') || item.includes('.jpg')) {
+                                    if (item.includes('http') && ( item.includes('.png') || item.includes('.jpg') || item.includes('.svg') )) {
                                         return <td><img src={item} alt='' /></td>
                                     } else {
                                         return <td>{item || '.'}</td>
