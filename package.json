@@ -1,6 +1,6 @@
 {
   "name": "opize-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "license": "MIT",
   "description": "Opize를 위한 컴포넌트 패키지",
@@ -8,6 +8,7 @@
   "author": "HyunsDev <hyuns@hyuns.dev> (https://hyuns.dev)",
   "module": "dist/index.js",
   "main": "dist/index.js",
+  "types": "dish/index.d.ts",
   "bugs": {
     "url": "https://github.com/HyunsDev/opize-conponents/issues",
     "email": "hello@opize.me"
