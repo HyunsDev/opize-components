@@ -36,6 +36,7 @@ interface TableButtonProp {
     onClick: () => any;
     label: string;
     color?: 'normal' | 'success' | 'error' | 'teal';
+    img?: string;
 }
 
 interface TableBadgeProp {
@@ -43,10 +44,16 @@ interface TableBadgeProp {
     color?: 'normal' | 'success' | 'error' | 'teal';
 }
 
+interface TableProfileProp {
+    type: 'profile';
+    label: string;
+    img: string;
+}
+
 interface TableProp {
     column: string[],
     items: {
-        [key: string]: null | string | number | boolean | TableButtonProp | {type: 'badge', value: TableBadgeProp[]} | React.ReactNode | any
+        [key: string]: null | string | number | boolean | TableButtonProp | {type: 'badge', value: TableBadgeProp[]} | TableProfileProp | React.ReactNode  | any
     }[]
 }
 
@@ -55,6 +62,9 @@ const TableButtonDiv = styled.div`
     font-weight: 800;
     cursor: pointer;
     transition: 200ms;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 `
 
 function TableButton(props:TableButtonProp) {
@@ -74,6 +84,7 @@ function TableButton(props:TableButtonProp) {
 
     return (
         <TableButtonDiv onClick={props.onClick} {...style}>
+            {props.img && <img src={props.img} alt={props.label} />}
             {props.label}
         </TableButtonDiv>
     )
@@ -123,6 +134,21 @@ function TableBadge(props:TableBadgeProp) {
     )
 }
 
+const TableProfileDiv = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+`
+
+function TableProfile(props:TableProfileProp) {
+    return (
+        <TableProfileDiv>
+            <img src={props.img} alt={props.label} />
+            {props.label}
+        </TableProfileDiv>
+    )
+}
+
 export function Table(props: TableProp) {
     return (
         <>
@@ -153,6 +179,8 @@ export function Table(props: TableProp) {
                                     return <td><TableButton {...item} /></td>
                                 } else if (item && typeof item === "object" && item.type === 'badge') {
                                     return <td><TableBadges>{item.value.map((badge:TableBadgeProp) => <TableBadge {...badge} />)}</TableBadges></td>
+                                } else if (item && typeof item === "object" && item.type === 'profile') {
+                                    return <td><TableProfile {...item} /></td>
                                 } else if (item) {
                                     return <td>{item}</td>
                                 } else {
