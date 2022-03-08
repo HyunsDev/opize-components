@@ -16,17 +16,28 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  column: ['img', 'title', 'number', 'boolean', 'button', 'badge', 'unknown'],
+  column: ['img', 'title', 'number', 'profile', 'boolean', 'button', 'button_img', 'badge', 'unknown'],
   items: [
     {
       title: 'title',
       number: 123,
       boolean: true,
+      profile: {
+        type: 'profile',
+        label: 'profile',
+        img: OpizeLogo,
+      },
       img: OpizeLogo,
       button: {
         type: 'button',
         label: 'Button',
         onClick: () => null,
+      },
+      button_img: {
+        type: 'button',
+        label: 'Button',
+        onClick: () => null,
+        img: OpizeLogo,
       },
       badge: {
         type: 'badge',
