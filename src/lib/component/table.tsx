@@ -2,10 +2,16 @@ import styled from 'styled-components'
 import React from 'react';
 import { Checkbox } from '..'
 
+const TableDivver = styled.div`
+    width: 100%;
+    overflow-x: scroll;
+`
+
 const TableStyle = styled.table`
     width: 100%;
     text-align: left;
     border-spacing: 0px;
+    overflow-x: scroll;
 
     thead {
         
@@ -152,7 +158,7 @@ function TableProfile(props:TableProfileProp) {
 
 export function Table(props: TableProp) {
     return (
-        <>
+        <TableDivver>
             <TableStyle>
                 <thead>
                     <tr>
@@ -192,6 +198,6 @@ export function Table(props: TableProp) {
                     }
                 </tbody>
             </TableStyle>
-        </>
+        </TableDivver>
     )
 }
