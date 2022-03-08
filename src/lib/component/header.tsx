@@ -5,7 +5,7 @@ import { ArrowRight } from 'phosphor-react'
 import React from 'react';
 import { useMediaQuery } from "react-responsive"
 
-import { Dropdown } from "../../lib";
+import { Dropdown } from "../input/dropdown";
 import MenuImg from "../assets/list.svg";
 
 const Divver = styled.div`
