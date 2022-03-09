@@ -142,20 +142,18 @@ const CTAButtonA = styled.a`
     align-items: center;
     text-decoration: none;
     padding: 8px 16px;
-    border-radius: 18px;
+    border-radius: 999px;
     transition: 200ms;
     color: var(--grey9);
     font-size: 14px;
     min-height: 36px;
     box-sizing: border-box;
     border: solid 1px var(--grey5);
-    	
-    @media (max-width: 600px) {
-        display: none;
-    }
+
     
     &:hover {
-        background-color: var(--greyPlaceholder)
+        color: var(--grey0);
+        background-color: var(--grey9)
     }
 `
 
@@ -164,18 +162,14 @@ const CTAButtonLink = styled(Link)`
     align-items: center;
     text-decoration: none;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 999px;
     transition: 200ms;
     color: var(--grey9);
     font-size: 14px;
     min-height: 36px;
     box-sizing: border-box;
     border: solid 1px var(--grey5);
-    	
-    @media (max-width: 600px) {
-        display: none;
-    }
-    
+
     &:hover {
         color: var(--grey0);
         background-color: var(--grey9)
@@ -281,11 +275,13 @@ export function Header(props:HeaderIf) {
             <Items>
                 <PC>
                     {props.menus.map((e, i) => <MenuBtn to={e.to} key={i}>{e.label}</MenuBtn>)}
+                    <CTAButton {...props.cta} />
                 </PC>
                 <Mobile>
+                    <CTAButton {...props.cta} />
                     <MobileDropdown><Dropdown direction='right' img={MenuImg} menus={props.menus.map(e => ({to: e.to, label: e.label})) } /></MobileDropdown>
                 </Mobile>
-                <CTAButton {...props.cta} />
+                
                 <User {...props.user} />
             </Items>
         </Divver>
