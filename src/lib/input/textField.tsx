@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import React from 'react';
+import { active } from "../css/input_pseudo";
 
 const LoginDiv = styled.div`
     width: 100%;
@@ -16,11 +17,32 @@ interface InputIf {
     variant: 'underlined' | 'outlined';
 }
 
-const Input = styled.input`
-    border-radius: ${(props:InputIf) => props.variant === 'outlined' ? 8 : 0}px;
-    border: ${(props:InputIf) => props.variant === 'outlined' ? 'solid 2px' : '0'};
-    ${(props:InputIf) => props.variant === 'underlined' && 'border-bottom: solid 2px'};
-    border-color: ${(props: InputIf) => props.error ? "var(--red9)" : "var(--grey2)"};
+const map = {
+    borderRadius: {
+        underlined: '0px',
+        outlined: '4px',
+    },
+    border: {
+        underlined: '0',
+        outlined: 'solid 2px',
+    },
+    borderBottom: {
+        underlined: 'solid 2px',
+        outlined: ''
+    },
+    borderColor: {
+        error: 'var(--red9)',
+        normal: 'var(--grey2)'
+    }
+}
+
+// TODO: 이거 map방식으로 바꾸고 input_pseudo.tsx 모듈 사용하기
+const Input = styled.input<InputIf>`
+    border-radius: ${(props) => map.borderRadius[props.variant]};
+    border: ${(props) => map.border[props.variant]};
+    border-bottom: ${(props) => map.borderBottom[props.variant]};
+    border-color: ${(props) => map.borderColor[props.error ? 'error' : 'normal']};
+
     width: 100%;
     height: 40px;
     box-sizing: border-box;
